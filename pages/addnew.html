@@ -21,39 +21,42 @@
     </div>
 
     <div class="grid">
-
+<!-- img upload, need to add upload icon later -->
         <div class="card image-upload">
-            Upload image here
+            <input type="file" id="imageInput" hidden>
+            <label for="imageInput" id="imageLabel">Upload image here</label>
+            <img id="preview" />
         </div>
 
         <div class="card title">
             <h4>Title</h4>
-            <div class="placeholder">Add recipe title</div>
+            <div class="placeholder" contenteditable="true" data-placeholder="Add recipe title"></div>
         </div>
 
         <div class="card small">
             <h4>Cooking Time</h4>
-            <div class="placeholder">00:00:00 min</div>
+            <!-- vvv figure out how to make this turn into hours and minutes later vvv -->
+            <input type="number" placeholder="Minutes"> 
         </div>
 
         <div class="card small">
             <h4>Serves</h4>
-            <div class="placeholder">__ People</div>
+            <div class="placeholder" contenteditable="true" data-placeholder="Number of people"></div>
         </div>
 
         <div class="card ingredients">
             <h4>Ingredients</h4>
-            <div class="placeholder">• Add Ingredients</div>
+            <div class="placeholder" contenteditable="true" data-placeholder="• Add ingredients"></div>
         </div>
 
         <div class="card directions">
             <h4>Directions</h4>
-            <div class="placeholder">1. Add directions</div>
+            <div class="placeholder" contenteditable="true" data-placeholder="1. Add directions"></div>
         </div>
 
         <div class="card description">
             <h4>Description</h4>
-            <div class="placeholder">Add description</div>
+            <div class="placeholder" contenteditable="true" data-placeholder="Add description"></div>
         </div>
 
     </div>
