@@ -1,0 +1,172 @@
+/* GLOBAL PAGE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4eedf;
+  color: #1f1f1f;
+}
+
+/* PROFILE HEADER */
+.profile-header {
+  background: #9cab9f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 34px 26px;
+  border-bottom: 2px solid #4b4b4b;
+  gap: 25px;
+}
+
+.profile-left {
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.username-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.username-row h1 {
+  font-size: 4.4rem;
+  font-weight: 800;
+  color: #13251c;
+}
+
+.settings-btn {
+  text-decoration: none;
+  color: #13251c;
+  display: flex;
+  align-items: center;
+}
+
+.settings-btn .material-symbols-outlined {
+  font-size: 4rem;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.profile-tabs a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.profile-right {
+  flex-shrink: 0;
+}
+
+.create-btn {
+  display: inline-block;
+  background: #5d7434;
+  color: white;
+  text-decoration: none;
+  font-size: 2.3rem;
+  font-weight: 700;
+  padding: 24px 34px;
+  border-radius: 28px;
+}
+
+/* MAIN CONTENT */
+.content {
+  padding: 26px 38px 60px;
+}
+
+.content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.content-top h2 {
+  font-size: 2.1rem;
+  color: #575757;
+  font-weight: 800;
+}
+
+.controls {
+  display: flex;
+  gap: 26px;
+}
+
+.control-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #1c1c1c;
+}
+
+.control-btn .icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .username-row h1 {
+    font-size: 3.2rem;
+  }
+
+  .logo-name,
+  .top-links a {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-right {
+    align-self: flex-start;
+  }
+
+  .content-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .username-row h1 {
+    font-size: 2.5rem;
+  }
+}
