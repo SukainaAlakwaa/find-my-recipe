@@ -2,7 +2,7 @@ const input = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const label = document.getElementById("imageLabel");
 
-// chatgpt generated code for image preview, doesnt work as of rn
+// chatgpt generated code for image preview, works, will have to add a way to change img if user wants
 input.addEventListener("change", () => {
     const file = input.files[0];
     if (file) {
