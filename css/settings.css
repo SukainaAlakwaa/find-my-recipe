@@ -531,6 +531,38 @@ body.dark-mode .contact-card textarea {
   color: #111;
 }
 
+/* Footer */
+.footer {
+  border-top: 1px solid #8a8a8a;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 60px 40px;
+  background-color: #f3efe2;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer p,
+.footer h4 {
+  color: #1f1f1f;
+}
+
+.footer h4 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.footer p {
+  font-size: 1.1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  font-size: 2rem;
+}
+
 
 /* RESPONSIVE LAYOUT */
 @media (max-width: 900px) {

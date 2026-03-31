@@ -1,4 +1,4 @@
-/* GLOBAL PAGE STYLES */
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -44,27 +44,26 @@ body {
   text-decoration: none;
 }
 
-/* PROFILE HEADER */
+/* Profile header */
 .profile-header {
   background: #9cab9f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 34px 26px;
-  border-bottom: 2px solid #4b4b4b;
-  gap: 25px;
+  padding: 24px 40px;
+  border-bottom: 1.5px solid #4b4b4b;
+  gap: 28px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.profile-left {
-  flex-shrink: 0;
-}
+.profile-left { flex-shrink: 0; }
 
 .profile-pic {
-  width: 230px;
-  height: 230px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
 }
 
 .profile-center {
@@ -74,15 +73,16 @@ body {
   justify-content: center;
 }
 
+/* Username row */
 .username-row {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .username-row h1 {
-  font-size: 4.4rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #13251c;
 }
@@ -91,115 +91,201 @@ body {
   text-decoration: none;
   color: #13251c;
   display: flex;
-  align-items: center;
 }
 
 .settings-btn .material-symbols-outlined {
-  font-size: 4rem;
+  font-size: 2.4rem;
 }
 
+/* Tabs */
 .profile-tabs {
   display: flex;
-  gap: 44px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .profile-tabs a {
   text-decoration: none;
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
-.profile-right {
-  flex-shrink: 0;
+.profile-tabs a.active {
+  border-bottom: 2px solid #13251c;
 }
+
+/* Create button */
+.profile-right { flex-shrink: 0; }
 
 .create-btn {
-  display: inline-block;
   background: #5d7434;
   color: white;
-  text-decoration: none;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  padding: 24px 34px;
-  border-radius: 28px;
+  padding: 16px 28px;
+  border-radius: 18px;
+  text-decoration: none;
 }
 
-/* MAIN CONTENT */
+/* Main content */
 .content {
-  padding: 26px 38px 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 40px 60px;
 }
 
+/* Top bar */
 .content-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
 .content-top h2 {
-  font-size: 2.1rem;
+  font-size: 2rem;
   color: #575757;
   font-weight: 800;
 }
 
-.controls {
-  display: flex;
-  gap: 26px;
+/* Collection form */
+.collections-panel {
+  margin-bottom: 24px;
 }
 
-.control-btn {
+.collection-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.collection-form input {
+  padding: 12px 14px;
+  min-width: 260px;
+  border-radius: 10px;
+  border: 1px solid #9f9f9f;
+}
+
+.collection-form button {
+  background: #5d7434;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
   border: none;
-  background: transparent;
-  font-size: 1.05rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   cursor: pointer;
-  color: #1c1c1c;
 }
 
-.control-btn .icon {
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Recipe grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* Recipe card */
+.recipe-card {
+  background: #fffaf1;
+  border: 1px solid #d7cdbd;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 14px;
+}
+
+.recipe-card h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+/* Buttons */
+.recipe-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.recipe-actions button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn { background: #d8e3d7; }
+.favorite-btn { background: #f2d7dc; }
+.collection-btn { background: #efe6c9; }
+.remove-btn { background: #ddd; }
+
+/* Collection card */
+.collection-card {
+  background: #fffaf1;
+  border: 1px solid #d7cdbd;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+/* Empty message */
+.empty-message {
+  font-size: 1.1rem;
+  color: #666;
+  padding: 20px 0;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #8a8a8a;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 60px 40px;
+  background-color: #f3efe2;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer p,
+.footer h4 {
+  color: #1f1f1f;
+}
+
+.footer h4 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.footer p {
+  font-size: 1.1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
   font-size: 2rem;
-  line-height: 1;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 1100px) {
-  .username-row h1 {
-    font-size: 3.2rem;
-  }
-
-  .logo-name,
-  .top-links a {
-    font-size: 2rem;
-  }
+  .profile-header { padding: 20px 28px; }
+  .content { padding: 24px 28px 50px; }
 }
 
 @media (max-width: 800px) {
   .profile-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .profile-right {
-    align-self: flex-start;
-  }
-
-  .content-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .profile-pic {
-    width: 180px;
-    height: 180px;
-  }
-
-  .username-row h1 {
-    font-size: 2.5rem;
   }
 }
