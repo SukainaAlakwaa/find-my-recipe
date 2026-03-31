@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ================= PROFILE (AVATAR SYSTEM) =================
   const avatars = [
-    { img: "avatar-noodles.png", name: "Cozy Noodles" },
-    { img: "avatar-dumplings.png", name: "Happy Dumpling" },
-    { img: "avatar-toast.png", name: "Toasty Butter" },
-    { img: "avatar-sushi.png", name: "Sleepy Sushi" },
-    { img: "avatar-cookie.png", name: "Cookie Monster" },
-    { img: "avatar-cake.png", name: "Sweet Cake" }
+    { img: "../images/avatar-noodles.png", name: "Cozy Noodles" },
+    { img: "../images/avatar-dumplings.png", name: "Humpy Dumpling" },
+    { img: "../images/avatar-toast.png", name: "Toasty Butter" },
+    { img: "../images/avatar-sushi.png", name: "Sleepy Sushi" },
+    { img: "../images/avatar-cookie.png", name: "Cookie Monster" },
+    { img: "../images/avatar-cake.png", name: "Chocolat Cake" }
   ];
 
   const currentProfile = document.getElementById("currentProfile");
