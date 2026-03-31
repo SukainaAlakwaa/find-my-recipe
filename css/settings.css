@@ -1,0 +1,582 @@
+/* ================= SETTINGS LAYOUT ================= */
+.settings-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+.settings-sidebar {
+  width: 260px;
+  background: #9caba0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.settings-content {
+  flex: 1;
+  background: #f3ecdc;
+  padding: 22px 28px 18px;
+  box-shadow: inset 10px 0 12px -12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.settings-panel {
+  display: none;
+}
+
+.settings-panel.active {
+  display: block;
+}
+
+
+/* ================= SIDEBAR TITLE ================= */
+.settings-title-box {
+  padding: 28px 20px;
+}
+
+.settings-title-box h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+
+/* ================= SIDEBAR MENU ================= */
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 60px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menu-icon i {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.menu-item span:last-child {
+  line-height: 1;
+}
+
+
+/* ================= PANEL HEADINGS ================= */
+.profile-heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 4px 0 18px 6px;
+}
+
+.display-subtext,
+.help-section p,
+.avatar-text p {
+  font-size: 1rem;
+  color: #222;
+}
+
+.display-subtext {
+  margin: 0 0 28px 6px;
+}
+
+.help-layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.help-section {
+  margin-bottom: 60px;
+}
+
+.help-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+
+/* ================= PROFILE PANEL ================= */
+.profile-layout {
+  max-width: 980px;
+  margin: 0 auto;
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.current-profile-card {
+  background: #95a59b;
+  border-radius: 32px;
+  padding: 22px 28px;
+  min-height: 150px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.current-profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.current-profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.current-profile-info p {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.05;
+}
+
+
+/* ================= PROFILE AVATAR GRID ================= */
+.avatar-grid {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.avatar-grid img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+  object-fit: cover;
+  border: 3px solid transparent;
+}
+
+.avatar-grid img:hover {
+  transform: scale(1.05);
+}
+
+.avatar-grid img.selected {
+  border-color: #111;
+}
+
+.avatar-text {
+  text-align: center;
+}
+
+.avatar-text h3 {
+  margin: 0 0 8px;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.avatar-text p {
+  margin: 0;
+}
+
+
+/* ================= PROFILE BUTTONS ================= */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.profile-btn,
+.support-btn {
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile-btn {
+  background: #5d7434;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+  transform: translateY(-1px);
+  background: #87988e;
+}
+
+.save-btn {
+  background: #5d7434;
+}
+
+.save-btn:hover,
+.support-btn:hover {
+  background: #50642c;
+}
+
+
+/* ================= DISPLAY PANEL ================= */
+.display-layout {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.theme-card {
+  width: 100%;
+  min-height: 110px;
+  border: none;
+  background: #95a59b;
+  border-radius: 32px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: left;
+}
+
+.theme-card:hover {
+  transform: translateY(-2px);
+}
+
+.theme-card.active {
+  box-shadow: 0 0 0 4px #111 inset;
+}
+
+.theme-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #f3ecdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.theme-icon i {
+  font-size: 2.5rem;
+  color: #111;
+  line-height: 1;
+}
+
+.theme-label {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1;
+}
+
+
+/* ================= HELP / CONTACT PANEL ================= */
+.contact-section {
+  padding: 40px;
+}
+
+.contact-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #8e9f97;
+  border-radius: 40px;
+}
+
+.contact-box h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.contact-form label {
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.support-btn {
+  background: #5d7434;
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+
+.error-message {
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+.success-message {
+  color: #2e7d32;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+
+/* ================= FAQ PANEL ================= */
+.faq-list {
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 0 16px;
+  color: #444;
+}
+
+.faq-arrow {
+  transition: transform 0.2s ease;
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* ================= OPTIONAL CONTACT CARD ================= */
+.contact-card {
+  background: #95a59b;
+  border-radius: 28px;
+  padding: 20px 24px;
+  margin-top: 12px;
+}
+
+.contact-card input,
+.contact-card select,
+.contact-card textarea {
+  background: #f3ecdc;
+  border: none;
+}
+
+
+/* ================= DARK MODE LAYOUT ================= */
+body.dark-mode {
+  background: #1f2521;
+  color: #f5f1e8;
+}
+
+body.dark-mode .settings-sidebar {
+  background: #6a7b71;
+}
+
+body.dark-mode .settings-content {
+  background: #232924;
+}
+
+body.dark-mode .menu-item.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ================= DARK MODE TEXT ================= */
+body.dark-mode .settings-title-box h1,
+body.dark-mode .menu-item,
+body.dark-mode .profile-heading,
+body.dark-mode .display-subtext,
+body.dark-mode .avatar-text p,
+body.dark-mode .theme-label,
+body.dark-mode .current-profile-info p,
+body.dark-mode .settings-panel h2,
+body.dark-mode .settings-panel h3,
+body.dark-mode .help-section p,
+body.dark-mode .faq-answer {
+  color: #f5f1e8;
+}
+
+
+/* ================= DARK MODE CARDS ================= */
+body.dark-mode .current-profile-card,
+body.dark-mode .theme-card,
+body.dark-mode .contact-card {
+  background: #7a8d82;
+}
+
+body.dark-mode .theme-icon {
+  background: #f5f1e8;
+}
+
+body.dark-mode .avatar-grid img.selected,
+body.dark-mode .theme-card.active {
+  box-shadow: 0 0 0 4px #f5f1e8 inset;
+}
+
+
+/* ================= DARK MODE FORM ================= */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form select,
+body.dark-mode .contact-form textarea,
+body.dark-mode .contact-card input,
+body.dark-mode .contact-card select,
+body.dark-mode .contact-card textarea {
+  background: #f5f1e8;
+  color: #111;
+}
+
+
+/* ================= RESPONSIVE LAYOUT ================= */
+@media (max-width: 900px) {
+  .settings-layout {
+    flex-direction: column;
+  }
+
+  .settings-sidebar {
+    width: 100%;
+  }
+
+  .settings-content {
+    padding: 20px;
+    overflow: visible;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================= RESPONSIVE PROFILE ================= */
+@media (max-width: 900px) {
+  .profile-heading {
+    font-size: 2.2rem;
+    margin-left: 0;
+  }
+
+  .profile-layout {
+    height: auto;
+  }
+
+  .current-profile-card {
+    padding: 24px;
+    gap: 24px;
+    border-radius: 28px;
+    min-height: auto;
+  }
+
+  .current-profile-card img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .current-profile-info p {
+    font-size: 2.2rem;
+  }
+
+  .avatar-grid img {
+    width: 74px;
+    height: 74px;
+  }
+
+  .avatar-text h3 {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* ================= RESPONSIVE DISPLAY ================= */
+@media (max-width: 900px) {
+  .theme-card {
+    min-height: 92px;
+    padding: 18px 22px;
+    gap: 20px;
+    border-radius: 24px;
+  }
+
+  .theme-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .theme-icon i {
+    font-size: 2rem;
+  }
+
+  .theme-label {
+    font-size: 1.6rem;
+  }
+}

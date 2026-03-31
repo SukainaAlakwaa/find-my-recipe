@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- HEAD -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings Page</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style1.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <!-- MAIN LAYOUT -->
+  <main class="settings-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="settings-sidebar">
+      <div class="settings-title-box">
+        <h1>Settings</h1>
+      </div>
+
+      <!-- MENU -->
+      <nav class="settings-menu">
+        <a href="#" class="menu-item active" data-tab="profile">
+          <span class="menu-icon"><i class="ri-user-3-line"></i></span>
+          <span>Profile</span>
+        </a>
+
+        <a href="#" class="menu-item" data-tab="display">
+          <span class="menu-icon"><i class="ri-sun-line"></i></span>
+          <span>Display</span>
+        </a>
+
+        <a href="#" class="menu-item" data-tab="faq">
+          <span class="menu-icon"><i class="ri-question-answer-line"></i></span>
+          <span>FAQs</span>
+        </a>
+
+        <a href="#" class="menu-item" data-tab="help">
+          <span class="menu-icon"><i class="ri-question-fill"></i></span>
+          <span>Help & Support</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <section class="settings-content">
+
+      <!-- PROFILE -->
+      <div class="settings-panel active" id="profile">
+        <h2 class="profile-heading">Profile</h2>
+
+        <div class="profile-layout">
+          <!-- CURRENT PROFILE -->
+          <div id="currentProfile"></div>
+
+          <!-- AVATARS -->
+          <div id="avatarGrid" class="avatar-grid"></div>
+
+          <!-- TEXT -->
+          <div class="avatar-text">
+            <h3>Choose Your Avatar</h3>
+            <p>Pick a food icon to update profile.</p>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="profile-actions">
+            <button type="button" id="editProfileBtn" class="profile-btn">Edit</button>
+            <button type="button" id="saveProfileBtn" class="profile-btn save-btn">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISPLAY -->
+      <div class="settings-panel" id="display">
+        <h2 class="profile-heading">Display</h2>
+
+        <div class="display-layout">
+          <p class="display-subtext">Customize how your website appearance looks.</p>
+
+          <!-- THEMES -->
+          <div class="theme-options">
+            <button type="button" class="theme-card active" data-theme="light">
+              <span class="theme-icon"><i class="ri-sun-line"></i></span>
+              <span class="theme-label">Light Mode</span>
+            </button>
+
+            <button type="button" class="theme-card" data-theme="dark">
+              <span class="theme-icon"><i class="ri-moon-clear-line"></i></span>
+              <span class="theme-label">Dark Mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="settings-panel" id="faq">
+        <h2 class="profile-heading">FAQs</h2>
+
+        <div class="help-layout">
+          <div class="help-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <!-- FAQ LIST -->
+            <div id="faqList" class="faq-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HELP -->
+      <div class="settings-panel" id="help">
+        <h2 class="profile-heading">Help & Support</h2>
+
+        <div class="help-layout">
+
+          <!-- ABOUT -->
+          <div class="help-section">
+            <h3>About FindMyRecipe</h3>
+            <p>
+              FindMyRecipe is a recipe-sharing and saving platform designed to make cooking
+              simple and accessible. (we can add more details here about the app.)
+            </p>
+          </div>
+
+          <!-- CONTACT -->
+          <section class="contact-section">
+            <div class="contact-box">
+              <h2>Contact Support</h2>
+
+              <!-- FORM -->
+              <form id="contactForm" class="contact-form">
+                <div class="form-grid">
+
+                  <!-- NAME -->
+                  <div class="field">
+                    <label for="support-name">Name</label>
+                    <input id="support-name" type="text" placeholder="Your name (optional)" />
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="field">
+                    <label for="support-email">Email</label>
+                    <input id="support-email" type="email" placeholder="Your email (optional)" />
+                  </div>
+
+                  <!-- TOPIC -->
+                  <div class="field field-full">
+                    <label for="support-topic">Topic</label>
+                    <select id="support-topic">
+                      <option>General Question</option>
+                      <option>Bug Report</option>
+                      <option>Feedback</option>
+                    </select>
+                  </div>
+
+                  <!-- MESSAGE -->
+                  <div class="field field-full">
+                    <label for="support-message">Message</label>
+                    <textarea id="support-message" rows="5" placeholder="Write your message..." required></textarea>
+                    <small id="messageError" class="error-message"></small>
+                  </div>
+
+                  <!-- SUBMIT -->
+                  <div class="field field-full">
+                    <button type="submit" class="support-btn">Send Message</button>
+                  </div>
+
+                </div>
+
+                <!-- SUCCESS -->
+                <p id="successMessage" class="success-message"></p>
+              </form>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
