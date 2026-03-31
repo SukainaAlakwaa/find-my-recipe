@@ -1,4 +1,37 @@
-/* ================= SETTINGS LAYOUT ================= */
+/* Navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px 20px;
+  border-bottom: 1px solid #8a8a8a;
+  background-color: #f3efe2;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5d7c4f;
+}
+
+.highlight {
+  color: #8ba094;
+  font-weight: 700;
+}
+
+/* Navigation icons */
+.nav-icons {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-icons a {
+  color: #203b22;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* SETTINGS LAYOUT  */
 .settings-layout {
   display: flex;
   min-height: calc(100vh - 70px);
@@ -29,7 +62,7 @@
 }
 
 
-/* ================= SIDEBAR TITLE ================= */
+/* SIDEBAR TITLE  */
 .settings-title-box {
   padding: 28px 20px;
 }
@@ -40,7 +73,7 @@
 }
 
 
-/* ================= SIDEBAR MENU ================= */
+/* SIDEBAR MENU  */
 .settings-menu {
   display: flex;
   flex-direction: column;
@@ -88,7 +121,7 @@
 }
 
 
-/* ================= PANEL HEADINGS ================= */
+/* PANEL HEADINGS */
 .profile-heading {
   font-size: 2.4rem;
   font-weight: 800;
@@ -121,7 +154,7 @@
 }
 
 
-/* ================= PROFILE PANEL ================= */
+/* PROFILE PANEL */
 .profile-layout {
   max-width: 980px;
   margin: 0 auto;
@@ -164,7 +197,7 @@
 }
 
 
-/* ================= PROFILE AVATAR GRID ================= */
+/* PROFILE AVATAR GRID */
 .avatar-grid {
   display: flex;
   justify-content: center;
@@ -206,7 +239,7 @@
 }
 
 
-/* ================= PROFILE BUTTONS ================= */
+/* PROFILE BUTTONS */
 .profile-actions {
   display: flex;
   justify-content: center;
@@ -245,7 +278,7 @@
 }
 
 
-/* ================= DISPLAY PANEL ================= */
+/* DISPLAY PANEL */
 .display-layout {
   max-width: 980px;
   margin: 0 auto;
@@ -305,7 +338,7 @@
 }
 
 
-/* ================= HELP / CONTACT PANEL ================= */
+/* HELP / CONTACT PANEL */
 .contact-section {
   padding: 40px;
 }
@@ -381,7 +414,7 @@
 }
 
 
-/* ================= FAQ PANEL ================= */
+/* FAQ PANEL */
 .faq-list {
   border-top: 1px solid rgba(15, 23, 42, 0.12);
 }
@@ -419,7 +452,7 @@
 }
 
 
-/* ================= OPTIONAL CONTACT CARD ================= */
+/* OPTIONAL CONTACT CARD */
 .contact-card {
   background: #95a59b;
   border-radius: 28px;
@@ -435,7 +468,7 @@
 }
 
 
-/* ================= DARK MODE LAYOUT ================= */
+/* DARK MODE LAYOUT */
 body.dark-mode {
   background: #1f2521;
   color: #f5f1e8;
@@ -454,7 +487,7 @@ body.dark-mode .menu-item.active {
 }
 
 
-/* ================= DARK MODE TEXT ================= */
+/* DARK MODE TEXT */
 body.dark-mode .settings-title-box h1,
 body.dark-mode .menu-item,
 body.dark-mode .profile-heading,
@@ -470,7 +503,7 @@ body.dark-mode .faq-answer {
 }
 
 
-/* ================= DARK MODE CARDS ================= */
+/* DARK MODE CARDS */
 body.dark-mode .current-profile-card,
 body.dark-mode .theme-card,
 body.dark-mode .contact-card {
@@ -487,7 +520,7 @@ body.dark-mode .theme-card.active {
 }
 
 
-/* ================= DARK MODE FORM ================= */
+/* DARK MODE FORM */
 body.dark-mode .contact-form input,
 body.dark-mode .contact-form select,
 body.dark-mode .contact-form textarea,
@@ -499,7 +532,7 @@ body.dark-mode .contact-card textarea {
 }
 
 
-/* ================= RESPONSIVE LAYOUT ================= */
+/* RESPONSIVE LAYOUT */
 @media (max-width: 900px) {
   .settings-layout {
     flex-direction: column;
@@ -520,7 +553,7 @@ body.dark-mode .contact-card textarea {
 }
 
 
-/* ================= RESPONSIVE PROFILE ================= */
+/* RESPONSIVE PROFILE */
 @media (max-width: 900px) {
   .profile-heading {
     font-size: 2.2rem;
@@ -558,7 +591,7 @@ body.dark-mode .contact-card textarea {
 }
 
 
-/* ================= RESPONSIVE DISPLAY ================= */
+/* RESPONSIVE DISPLAY */
 @media (max-width: 900px) {
   .theme-card {
     min-height: 92px;
