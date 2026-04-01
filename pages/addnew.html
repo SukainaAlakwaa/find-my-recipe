@@ -11,7 +11,7 @@
 </head>
 <body>
 
-      <header class="navbar">
+  <header class="navbar">
     <div class="logo">Find<span class="highlight">My</span>Recipe</div>
 
         <div class="search-wrapper">
@@ -26,25 +26,22 @@
         </div>
 
     <div class="nav-icons">
-      <a href="pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
-      <a href="pages/profile.html"><i class="fa-solid fa-user"></i></a>
-      <a href="pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+      <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+      <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
+      <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
     </div>
   </header>
 
 <div class="container">
 
-    <div class="profile-row">
-        <!-- <div class="pfp">pfp</div>
-        <div class="nickname">nickname</div> -->
-        <button class="post-btn">Post</button>
-    </div>
-
     <div class="grid">
 <!-- img upload, need to add upload icon later -->
         <div class="card image-upload">
             <input type="file" id="imageInput" hidden>
-            <label for="imageInput" id="imageLabel">Upload image here</label>
+            <label for="imageInput" id="imageLabel">
+                <i class="fa-solid fa-upload"></i>
+                <span>Upload image here</span>
+            </label>            
             <img id="preview" />
         </div>
 
@@ -76,6 +73,12 @@
         <div class="card directions">
             <h1>Directions</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Add directions"></div>
+        </div>
+
+        <div class="post">
+            <!-- <div class="pfp">pfp</div>
+            <div class="nickname">nickname</div> -->
+            <button class="post-btn">Post</button>
         </div>
 
 
