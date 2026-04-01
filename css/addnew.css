@@ -14,13 +14,14 @@ body {
 }
 
 /* Brand font */
-.logo, h1, .placeholder, .post-btn, label span {
+.logo, h1, .placeholder, .post-btn, label span, .current-profile-info p  {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
 .navbar a {
     text-decoration: none;
 }
+
 /* GLOBAL DARK MODE */
 /* Base */
 body.dark-mode {
@@ -30,7 +31,6 @@ body.dark-mode {
 
 /* Navbar / Header */
 body.dark-mode .navbar,
-body.dark-mode .site-header,
 body.dark-mode header {
   background: #2b2b2b;
   color: #f5f5f5;
@@ -47,8 +47,31 @@ body.dark-mode footer {
 body.dark-mode .navbar a,
 body.dark-mode .footer a,
 body.dark-mode header a,
-body.dark-mode footer a {
+body.dark-mode footer a,
+body.dark-mode .current-profile-info p {
   color: #f5f5f5;
+}
+
+body.dark-mode .card,
+body.dark-mode .card i,
+body.dark-mode .card span  {
+  background-color: #556b4f;
+  color: #f5f5f5;
+  transition: 0.25s ease;
+}
+
+body.dark-mode .card i:hover,
+body.dark-mode .card span:hover  {
+  color: #7f9287;
+}
+
+body.dark-mode .post-btn {
+  background-color: #f5f1e8;
+  color: #203b22;
+}
+
+body.dark-mode .post-btn:hover {
+  background-color: #ddd6c3;
 }
 
 /* Navigation bar */
@@ -62,10 +85,6 @@ body.dark-mode footer a {
 }
 
 .logo {
-  font-family: 'Glacial Indifference', sans-serif;
-}
-
-.logo {
   font-size: 2rem;
   font-weight: 700;
   color: #5d7c4f;
@@ -74,74 +93,6 @@ body.dark-mode footer a {
 .highlight {
   color: #8ba094;
   font-weight: 700;
-}
-
-/* Search area */
-.search-wrapper {
-  position: relative;
-  width: 320px;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to right, #203b22, #5d7c4f);
-  border-radius: 999px;
-  padding: 8px 16px;
-  width: 320px;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #f3efe2;
-  width: 100%;
-  font-size: 1rem;
-  font-family: 'Glacial Indifference', sans-serif;
-}
-
-.search-bar input::placeholder {
-  color: #d8d8c8;
-}
-
-.search-bar button {
-  background: transparent;
-  border: none;
-  color: #d8d8c8;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.search-bar button:hover {
-  opacity: 0.85;
-}
-
-/* Search suggestions */
-.suggestions-box {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  width: 100%;
-  background-color: #f3efe2;
-  border: 1px solid #c8c1b2;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  z-index: 1000;
-  display: none;
-}
-
-.suggestion-item {
-  padding: 12px 16px;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #1f1f1f;
-  background-color: #f3efe2;
-}
-
-.suggestion-item:hover {
-  background-color: #e8e2d3;
 }
 
 /* Navigation icons */
@@ -156,28 +107,55 @@ body.dark-mode footer a {
   text-decoration: none;
 }
 
-
-
-/* .pfp {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #ddd6c3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #556b4f;
+.container {
+  width: min(80vw, 900px);
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
 }
 
-.nickname {
-    flex: 1;
-    padding: 20px;
-    color: #556b4f;
-} */
+/* Profile header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+  align-items: center;
+  gap: 28px;
+  margin: 0 auto;
+}
+
+.current-profile-card {
+  /* padding: 0; */
+  height: 10%;
+  display: flex;
+  /* align-items: left; */
+  justify-content: left;
+  gap: min(1.5rem, 3vw);
+}
+
+.current-profile-card img {
+  width: min(3rem, 7vw);
+  height: min(3rem, 7vw);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.current-profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.current-profile-info p {
+  margin: 0;
+  font-size: min(2rem, 3vw);
+  font-weight: bold;
+  color: #111;
+  line-height: 1.05;
+}
 
 /* grid layout */
 .grid {
-    width: 90%;
     margin: 20px auto;
     /* display: contents; */
     display: grid;
@@ -187,7 +165,7 @@ body.dark-mode footer a {
     }
 
 .card {
-    background-color: #ddd6c3;
+    background-color: #f3efe2;
     border-radius: 20px;
     padding: 2vh 2vw;
     color: #556b4f;
@@ -271,8 +249,9 @@ body.dark-mode footer a {
 }
 
 .image-upload {
-    position: relative;
-    cursor: pointer;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
 }
 
 #preview {
@@ -298,26 +277,25 @@ h1 {
 }
 
 .post {
-    grid-column: span 3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-    /* margin-bottom: 20px; */
+  margin: 0;
+  grid-column: span 3;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .post-btn {
     background-color: #1f2521;
     color: white;
     width: 20%;
-    padding: 12px 28px;
+    padding: 0.5rem 3rem;
     border-radius: 25px;
     border: none;
+    font-size: 1.25rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.25s ease;
  }
 
  .post-btn:hover {
-    background-color: #203b22;
+    background-color: #2b2b2b;
  }

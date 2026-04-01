@@ -17,16 +17,6 @@
     <a href="../index.html" class="logo">
       Find<span class="highlight">My</span>Recipe
     </a>
-        <div class="search-wrapper">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="search" autocomplete="off" />
-            <button id="searchBtn" type="button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
-
-        <div id="suggestionsBox" class="suggestions-box"></div>
-        </div>
 
     <div class="nav-icons">
       <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
@@ -37,8 +27,16 @@
 
 <div class="container">
 
+    <!-- Profile Header -->
+  <div class="profile-header">
+    <!-- PROFILE INFO -->
+    <div class="profile-left">
+          <div id="currentProfile"></div>
+    </div>
+
+</div>
+
     <div class="grid">
-<!-- img upload, need to add upload icon later -->
         <div class="card image-upload">
             <input type="file" id="imageInput" hidden>
             <label for="imageInput" id="imageLabel">
@@ -52,11 +50,6 @@
             <h1>Title</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Add recipe title"></div>
         </div>
-
-        <!-- <div class="card description">
-            <h1>Description</h1>
-            <div class="placeholder" contenteditable="true" data-placeholder="Add description"></div>
-        </div> -->
 
         <div class="card small">
             <h1>Category</h1>
