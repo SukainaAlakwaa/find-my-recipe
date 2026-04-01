@@ -31,6 +31,27 @@
   text-decoration: none;
 }
 
+/* Logo Link */
+.logo {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4f6f52;
+}
+
+.logo .highlight {
+  color: #8aa399;
+  font-weight: 800;
+}
+
+/* Keep same color on all states */
+.logo:visited,
+.logo:hover,
+.logo:active {
+  color: #4f6f52;
+  text-decoration: none;
+}
+
 /* SETTINGS LAYOUT  */
 .settings-layout {
   display: flex;
