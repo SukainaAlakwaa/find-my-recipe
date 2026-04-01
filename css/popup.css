@@ -18,6 +18,9 @@ body {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
+.navbar a {
+    text-decoration: none;
+}
 /* GLOBAL DARK MODE */
 /* Base */
 body.dark-mode {
