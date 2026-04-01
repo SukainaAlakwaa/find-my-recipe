@@ -51,3 +51,60 @@ document.querySelector(".ingredients .placeholder")
     }
 });
 
+// POST RECIPE
+document.querySelector(".post-btn").addEventListener("click", () => {
+    const title = document.querySelector(".title .placeholder").innerText.trim();
+    const category = document.querySelectorAll(".small .placeholder")[0].innerText.trim();
+    const area = document.querySelectorAll(".small .placeholder")[1].innerText.trim();
+    const ingredients = document.querySelector(".ingredients .placeholder").innerText.trim();
+    const directions = document.querySelector(".directions .placeholder").innerText.trim();
+
+    const image = preview.src || "../images/recipe-default.png";
+
+    if (!title) {
+        alert("Please add a title!");
+        return;
+    }
+
+    const newRecipe = {
+        id: Date.now(),
+        title,
+        image,
+        category,
+        area,
+        ingredients,
+        directions
+    };
+
+    saveRecipe(newRecipe);
+
+    // sending to profile page
+    window.location.href = "../pages/profile.html";
+});
+
+function saveRecipe(recipe) {
+    // save to Saved Recipes
+    const saved = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+    saved.unshift(recipe);
+    localStorage.setItem("savedRecipes", JSON.stringify(saved));
+
+    // save to My Recipes collection
+    let collections = JSON.parse(localStorage.getItem("recipeCollections")) || [];
+
+    let myRecipes = collections.find(c => c.name === "My Recipes");
+
+    // if My Recipes collection doesn't exist, then we create it
+    if (!myRecipes) {
+        myRecipes = {
+            id: Date.now(),
+            name: "My Recipes",
+            recipes: []
+        };
+        collections.unshift(myRecipes);
+    }
+
+    // add recipe to collection
+    myRecipes.recipes.unshift(recipe);
+
+    localStorage.setItem("recipeCollections", JSON.stringify(collections));
+}
