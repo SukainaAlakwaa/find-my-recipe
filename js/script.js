@@ -1,3 +1,12 @@
+// ================= APPLY SAVED THEME =================
+const savedTheme = localStorage.getItem("theme") || "light";
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+} else {
+  document.body.classList.remove("dark-mode");
+}
+
 const hero = document.getElementById("hero");
 const recipesContainer = document.getElementById("recipesContainer");
 const searchInput = document.getElementById("searchInput");

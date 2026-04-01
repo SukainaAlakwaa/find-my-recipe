@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* Apply saved theme on load */
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.body.classList.toggle("dark-mode", savedTheme === "dark");
+
   /* Tab navigation */
   const menuItems = document.querySelectorAll(".menu-item");
   const panels = document.querySelectorAll(".settings-panel");
@@ -26,15 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Profile data */
   const avatars = [
-    { img: "../images/avatar-noodles.png", name: "Cozy Noodles" },
-    { img: "../images/avatar-dumplings.png", name: "Humpy Dumpling" },
-    { img: "../images/avatar-toast.png", name: "Toasty Butter" },
-    { img: "../images/avatar-sushi.png", name: "Sleepy Sushi" },
-    { img: "../images/avatar-cookie.png", name: "Cookie Monster" },
-    { img: "../images/avatar-cake.png", name: "Chocolat Cake" }
+    { img: "./images/avatar-noodles.png", name: "Cozy Noodles" },
+    { img: "./images/avatar-dumplings.png", name: "Humpy Dumpling" },
+    { img: "./images/avatar-toast.png", name: "Toasty Butter" },
+    { img: "./images/avatar-sushi.png", name: "Sleepy Sushi" },
+    { img: "./images/avatar-cookie.png", name: "Cookie Monster" },
+    { img: "./images/avatar-cake.png", name: "Chocolat Cake" }
   ];
 
-  /* Profile elements */
   const currentProfile = document.getElementById("currentProfile");
   const avatarGrid = document.getElementById("avatarGrid");
   const editBtn = document.getElementById("editProfileBtn");
@@ -43,12 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedAvatar = avatars[0];
   let editing = false;
 
-  /* Random avatar */
   function getRandomAvatar() {
     return avatars[Math.floor(Math.random() * avatars.length)];
   }
 
-  /* Load profile */
   function initializeProfileData() {
     const savedAvatar = localStorage.getItem("profileAvatar");
     const savedUsername = localStorage.getItem("profileUsername");
@@ -63,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedAvatar = avatars.find(avatar => avatar.img === savedAvatar) || avatars[0];
   }
 
-  /* Show profile */
   function renderProfile() {
     if (!currentProfile || !avatarGrid) return;
 
@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (saveBtn) saveBtn.disabled = !editing;
   }
 
-  /* Profile buttons */
   editBtn?.addEventListener("click", () => {
     editing = true;
     renderProfile();
@@ -114,14 +113,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeProfileData();
   renderProfile();
 
-  /* Display */
+  /* Display theme */
   const themeCards = document.querySelectorAll(".theme-card");
 
   themeCards.forEach(card => {
+    card.classList.toggle("active", card.dataset.theme === savedTheme);
+  });
+
+  themeCards.forEach(card => {
     card.addEventListener("click", () => {
-      themeCards.forEach(item => item.classList.remove("active"));
+      const selectedTheme = card.dataset.theme;
+
+      localStorage.setItem("theme", selectedTheme);
+      document.body.classList.toggle("dark-mode", selectedTheme === "dark");
+
+      themeCards.forEach(btn => btn.classList.remove("active"));
       card.classList.add("active");
-      document.body.classList.toggle("dark-mode", card.dataset.theme === "dark");
     });
   });
 
