@@ -164,7 +164,7 @@ body {
     /* display: contents; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 0.6fr 0.4fr;
+    grid-template-rows: 0.3fr;
     gap: 20px;
     }
 
@@ -176,21 +176,22 @@ body {
 }
 
 .image-upload {
-    grid-row: span 3;
+    grid-row: span 2;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50vh;
+    height: max(29vh, 220px);
 }
 
 .title {
     grid-column: span 2;
-    height: 12vh;
+    height: max(12vh, 100px);
 }
 
 .small {
-    height: 100px;
+    /* height: 100px; */
+    height: max(12vh, 100px);
 }
 
 [contenteditable="true"] {
@@ -203,14 +204,14 @@ body {
     opacity: 0.6;
 }
 
-input[type="time"] {
+/* input[type="minutes"] {
     width: 100%;
     border: none;
     background: transparent;
     font-size: 18px;
     color: #556b4f;
     outline: none;
-}
+} */
 
 .ingredients {
     height: 250px;
@@ -242,12 +243,13 @@ input[type="time"] {
 h1 {
     margin: 0 0 8px;
     padding: 0;
-    font-size: 2vh;
+    font-size: max(2vh, 14px);
     font-weight: bold;
     opacity: 0.8;
+    cursor: default;
 }
 
 .placeholder {
     padding: 0;
-    font-size: 2.5vh;
+    font-size: max(2.5vh, 16px);
 }
