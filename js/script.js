@@ -68,6 +68,7 @@ function changeHeroImage() {
 }
 
 // Display recipes on home page
+// Display recipes on home page
 async function displayRecipes(query = "chicken") {
   const recipes = await fetchRecipes(query);
 
@@ -92,7 +93,12 @@ async function displayRecipes(query = "chicken") {
       <button class="save-btn">Save</button>
     `;
 
+    const recipeLink = card.querySelector(".recipe-link");
     const saveBtn = card.querySelector(".save-btn");
+
+    recipeLink.addEventListener("click", () => {
+      localStorage.setItem("fromPage", "home");
+    });
 
     saveBtn.addEventListener("click", (e) => {
       e.preventDefault();

@@ -170,6 +170,51 @@ body.dark-mode footer a {
   border-bottom: 2px solid #13251c;
 }
 
+/* Recipe actions */
+.recipe-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* Icon button */
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #4f6f52;
+}
+
+/* Hover */
+.icon-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Heart color */
+.icon-btn .fa-heart {
+  color: #c94b4b;
+}
+
+/* Trash hover (optional) */
+.icon-btn .fa-trash:hover {
+  color: #b84a4a;
+}
+
+/* Recipe title */
+.recipe-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Recipe title */
+.recipe-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 /* Create button */
 .profile-right { flex-shrink: 0; }
 
@@ -228,6 +273,288 @@ body.dark-mode footer a {
   border: none;
   cursor: pointer;
 }
+/* Collection popup */
+.collection-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Collection popup box */
+.collection-popup-box {
+  background: #f7f3ea;
+  border-radius: 24px;
+  padding: 24px;
+  width: min(90%, 380px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Collection popup title */
+.collection-popup-box h3 {
+  margin: 0 0 16px;
+}
+
+/* Collection option */
+.collection-option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px solid #d7cdbd;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-family: 'Glacial Indifference', sans-serif;
+  font-size: 1rem;
+}
+
+.collection-option-btn:hover {
+  background: #efe8d8;
+}
+
+/* Close popup button */
+#closeCollectionPopupBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #5d7c4f;
+  color: white;
+  font-family: 'Glacial Indifference', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* COLLECTION EDITOR */
+.collection-editor {
+  background: #f7f3ea;
+  border: 1.5px solid #cfc3af;
+  border-radius: 28px;
+  padding: 28px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.collection-editor h3 {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #16233b;
+}
+
+.collection-editor input {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1.5px solid #bdb4a5;
+  border-radius: 18px;
+  background: #efefef;
+  font-size: 1.1rem;
+  font-family: 'Glacial Indifference', sans-serif;
+  margin-bottom: 18px;
+}
+
+.collection-editor input:focus {
+  outline: none;
+  border-color: #8ba094;
+  background: #ffffff;
+}
+
+/* EDITOR BUTTONS */
+.editor-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.editor-actions button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Glacial Indifference', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Save button */
+#saveCollectionEditBtn {
+  background: #5d7c4f;
+  color: white;
+}
+
+#saveCollectionEditBtn:hover {
+  background: #4f6b43;
+}
+
+/* Delete button */
+#deleteCollectionBtn {
+  background: #e6ddd0;
+  color: #5c4033;
+}
+
+/* Heart icon */
+.fa-heart {
+  color: #d85a5a;
+}
+
+/* Bookmark */
+.fa-bookmark {
+  color: #5d7c4f;
+}
+
+#deleteCollectionBtn:hover {
+  background: #d8ccbb;
+}
+
+/* Icon buttons */
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.65rem;
+  color: #4f6f52;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
+  color: #5d7c4f;
+}
+
+/* RECIPES INSIDE EDITOR */
+#collectionRecipesList {
+  border-top: 1px solid #d6cbbb;
+  padding-top: 10px;
+}
+
+.collection-recipe-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5dccd;
+}
+
+.collection-recipe-item span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.collection-recipe-item button {
+  border: none;
+  background: #d9b8a0;
+  color: #3d2b1f;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Glacial Indifference', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.collection-recipe-item button:hover {
+  background: #cfa487;
+}
+
+/* Recipe click */
+.recipe-click {
+  cursor: pointer;
+}
+
+/* Collection recipe click */
+.collection-recipe-click {
+  cursor: pointer;
+}
+
+/* COLLECTION CARDS */
+.collection-card {
+  background: #f7f3ea;
+  border: 1.5px solid #cfc3af;
+  border-radius: 28px;
+  padding: 26px 30px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.collection-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.collection-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #16233b;
+}
+
+.collection-card p {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #222;
+}
+
+/* Collection recipes list */
+#collectionRecipesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding-top: 10px;
+}
+
+/* Collection recipe card */
+.collection-recipe-card {
+  background: #fff;
+  border: 1px solid #d9cfbf;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* Collection recipe image */
+.collection-recipe-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Collection recipe content */
+.collection-recipe-content {
+  padding: 16px 18px;
+}
+
+/* Collection recipe title */
+.collection-recipe-content h4 {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16233b;
+}
+
+/* Collection remove button */
+.collection-remove-btn {
+  margin: 0 18px 18px;
+  border: none;
+  background: #d9b8a0;
+  color: #3d2b1f;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Glacial Indifference', sans-serif;
+  cursor: pointer;
+}
 
 /* Hidden */
 .hidden {
@@ -237,60 +564,49 @@ body.dark-mode footer a {
 /* Recipe grid */
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 /* Recipe card */
 .recipe-card {
-  background: #fffaf1;
-  border: 1px solid #d7cdbd;
-  border-radius: 18px;
+  background: #f3efe2;
+  border-radius: 26px;
   overflow: hidden;
+  border: 1px solid #d7cdbd;
 }
 
+/* Recipe image */
 .recipe-card img {
   width: 100%;
-  height: 180px;
+  height: 240px;
   object-fit: cover;
+  display: block;
 }
 
-.recipe-card-content {
-  padding: 14px;
-}
-
-.recipe-card h3 {
-  font-size: 1rem;
-  margin-bottom: 12px;
-}
-
-/* Buttons */
-.recipe-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.recipe-actions button {
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border: none;
+/* Recipe click */
+.recipe-click {
   cursor: pointer;
 }
 
-.save-btn { background: #d8e3d7; }
-.favorite-btn { background: #f2d7dc; }
-.collection-btn { background: #efe6c9; }
-.remove-btn { background: #ddd; }
+/* Recipe content */
+.recipe-card-content {
+  padding: 18px 22px 10px;
+}
 
-/* Collection card */
-.collection-card {
-  background: #fffaf1;
-  border: 1px solid #d7cdbd;
-  border-radius: 18px;
-  padding: 20px;
+.recipe-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #16233b;
+}
+
+/* Recipe actions */
+.recipe-actions {
+  display: flex;
+  gap: 18px;
+  padding: 0 22px 18px;
+  margin-top: auto;
 }
 
 /* Empty message */

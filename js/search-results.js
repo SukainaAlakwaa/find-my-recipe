@@ -36,6 +36,7 @@ function saveRecipeToProfile(meal) {
   if (!alreadySaved) {
     savedRecipes.unshift(recipeToSave);
     localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+    localStorage.setItem("fromPage", "home");
     return true;
   }
 

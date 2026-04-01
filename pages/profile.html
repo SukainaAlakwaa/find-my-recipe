@@ -73,8 +73,32 @@
       </div>
     </section>
 
+    <!-- COLLECTIONS EDITOR -->
+    <section id="collectionEditor" class="collection-editor hidden">
+      <h3>Edit Collection</h3>
+
+      <input type="text" id="editCollectionName" placeholder="Collection name" />
+
+      <div class="editor-actions">
+        <button id="saveCollectionEditBtn">Save</button>
+        <button id="deleteCollectionBtn">Delete</button>
+        <button id="closeCollectionEditorBtn" type="button">Close</button>
+      </div>
+
+      <div id="collectionRecipesList"></div>
+    </section>    
+
     <!-- RECIPES / COLLECTIONS OUTPUT -->
     <section id="profileOutput" class="recipe-grid"></section>
+
+    <!-- Collection popup -->
+    <div id="collectionPopup" class="collection-popup hidden">
+      <div class="collection-popup-box">
+        <h3>Select Collection</h3>
+        <div id="collectionPopupList"></div>
+        <button id="closeCollectionPopupBtn" type="button">Close</button>
+      </div>
+    </div>
 
   </main>
 
