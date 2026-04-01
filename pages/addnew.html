@@ -4,21 +4,39 @@
 <meta charset="UTF-8">
 <title>Add New Recipe</title>
 <link rel="stylesheet" href="../css/popup.css">
-<script src="../js/addnew.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference-2">
 
 </head>
 <body>
 
+      <header class="navbar">
+    <div class="logo">Find<span class="highlight">My</span>Recipe</div>
+
+        <div class="search-wrapper">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="search" autocomplete="off" />
+            <button id="searchBtn" type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div id="suggestionsBox" class="suggestions-box"></div>
+        </div>
+
+    <div class="nav-icons">
+      <a href="pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+      <a href="pages/profile.html"><i class="fa-solid fa-user"></i></a>
+      <a href="pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+    </div>
+  </header>
+
 <div class="container">
 
-    <div class="top-bar">
-        <div class="back">←</div>
-        <button class="post-btn">Post</button>
-    </div>
-
     <div class="profile-row">
-        <div class="pfp">pfp</div>
-        <div class="nickname">nickname</div>
+        <!-- <div class="pfp">pfp</div>
+        <div class="nickname">nickname</div> -->
+        <button class="post-btn">Post</button>
     </div>
 
     <div class="grid">
@@ -32,6 +50,11 @@
         <div class="card title">
             <h1>Title</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Add recipe title"></div>
+        </div>
+
+        <div class="card description">
+            <h1>Description</h1>
+            <div class="placeholder" contenteditable="true" data-placeholder="Add description"></div>
         </div>
 
         <div class="card small">
@@ -55,10 +78,7 @@
             <div class="placeholder" contenteditable="true" data-placeholder="1. Add directions"></div>
         </div>
 
-        <div class="card description">
-            <h1>Description</h1>
-            <div class="placeholder" contenteditable="true" data-placeholder="Add description"></div>
-        </div>
+
 
     </div>
 
