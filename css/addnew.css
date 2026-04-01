@@ -1,25 +1,27 @@
 * {
-    /* display:block; */
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background-color: #7f9287;
-    /* display: flexbox; */
-    /* flex:auto; */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  margin: 0;
+  background-color: #7f9287;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* Brand font */
-.logo, h1, .placeholder, .post-btn, label span, .current-profile-info p  {
+.logo,
+h1,
+.placeholder,
+.post-btn,
+label span,
+.current-profile-info p  {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
 .navbar a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* GLOBAL DARK MODE */
@@ -118,7 +120,7 @@ body.dark-mode .post-btn:hover {
 .profile-header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0 0;
+  padding: 1.25rem 0 0;
   align-items: center;
   gap: 28px;
   margin: 0 auto;
@@ -211,7 +213,6 @@ body.dark-mode .post-btn:hover {
 }
 
 .small {
-    /* height: 100px; */
     height: max(12vh, 100px);
 }
 
@@ -224,15 +225,6 @@ body.dark-mode .post-btn:hover {
     content: attr(data-placeholder);
     opacity: 0.6;
 }
-
-/* input[type="minutes"] {
-    width: 100%;
-    border: none;
-    background: transparent;
-    font-size: 18px;
-    color: #556b4f;
-    outline: none;
-} */
 
 .ingredients {
     height: 250px;
