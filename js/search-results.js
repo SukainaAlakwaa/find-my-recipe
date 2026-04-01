@@ -19,7 +19,6 @@ function getQueryFromURL() {
   return params.get("query") || "";
 }
 
-// Save recipe in the same format the profile page uses
 function saveRecipeToProfile(meal) {
   let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
 
