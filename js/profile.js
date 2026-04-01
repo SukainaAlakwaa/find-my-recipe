@@ -1,20 +1,55 @@
-/* Profile elements */
+/* Profile info */
 const profileAvatar = document.getElementById("profileAvatar");
 const profileUsername = document.getElementById("profileUsername");
 
-/* Load profile info */
-function loadProfileInfo() {
-  const savedUsername = localStorage.getItem("profileUsername");
-  const savedAvatar = localStorage.getItem("profileAvatar");
+/* Default profile */
+function ensureProfileData() {
+  const avatars = [
+    "../images/avatar-noodles.png",
+    "../images/avatar-dumplings.png",
+    "../images/avatar-toast.png",
+    "../images/avatar-sushi.png",
+    "../images/avatar-cookie.png",
+    "../images/avatar-cake.png"
+  ];
 
-  if (savedUsername && profileUsername) {
-    profileUsername.textContent = savedUsername;
+  const names = [
+    "Cozy Noodles",
+    "Humpy Dumpling",
+    "Toasty Butter",
+    "Sleepy Sushi",
+    "Cookie Monster",
+    "Chocolat Cake"
+  ];
+
+  if (!localStorage.getItem("profileAvatar")) {
+    const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+    localStorage.setItem("profileAvatar", randomAvatar);
   }
 
-  if (savedAvatar && profileAvatar) {
-    profileAvatar.src = savedAvatar;
+  if (!localStorage.getItem("profileUsername")) {
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    localStorage.setItem("profileUsername", randomName);
   }
 }
+
+/* Load profile */
+function loadProfileInfo() {
+  ensureProfileData();
+
+  const savedAvatar = localStorage.getItem("profileAvatar");
+  const savedUsername = localStorage.getItem("profileUsername");
+
+  if (profileAvatar && savedAvatar) {
+    profileAvatar.src = savedAvatar;
+  }
+
+  if (profileUsername && savedUsername) {
+    profileUsername.textContent = savedUsername;
+  }
+}
+
+loadProfileInfo();
 
 /* Storage keys */
 const SAVED_KEY = "savedRecipes";
@@ -30,7 +65,7 @@ const collectionsPanel = document.getElementById("collectionsPanel");
 const collectionNameInput = document.getElementById("collectionNameInput");
 const addCollectionBtn = document.getElementById("addCollectionBtn");
 
-/* Starter data (no API now) */
+/* Starter data */
 function addStarterData() {
   if (!localStorage.getItem(SAVED_KEY)) {
     setSavedRecipes([
@@ -60,14 +95,29 @@ function setData(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-function getSavedRecipes() { return getData(SAVED_KEY); }
-function setSavedRecipes(data) { setData(SAVED_KEY, data); }
+function getSavedRecipes() {
+  return getData(SAVED_KEY);
+}
 
-function getFavoriteRecipes() { return getData(FAVORITES_KEY); }
-function setFavoriteRecipes(data) { setData(FAVORITES_KEY, data); }
+function setSavedRecipes(data) {
+  setData(SAVED_KEY, data);
+}
 
-function getCollections() { return getData(COLLECTIONS_KEY); }
-function setCollections(data) { setData(COLLECTIONS_KEY, data); }
+function getFavoriteRecipes() {
+  return getData(FAVORITES_KEY);
+}
+
+function setFavoriteRecipes(data) {
+  setData(FAVORITES_KEY, data);
+}
+
+function getCollections() {
+  return getData(COLLECTIONS_KEY);
+}
+
+function setCollections(data) {
+  setData(COLLECTIONS_KEY, data);
+}
 
 function getActiveTab() {
   return localStorage.getItem(ACTIVE_TAB_KEY) || "saved";
@@ -79,7 +129,7 @@ function setActiveTab(tab) {
 
 /* Tabs UI */
 function updateActiveTabUI(tab) {
-  tabLinks.forEach(link => {
+  tabLinks.forEach((link) => {
     link.classList.toggle("active", link.dataset.tab === tab);
   });
 
@@ -95,8 +145,8 @@ function updateActiveTabUI(tab) {
 function toggleSaveRecipe(id) {
   let saved = getSavedRecipes();
 
-  if (saved.some(r => r.id === id)) {
-    saved = saved.filter(r => r.id !== id);
+  if (saved.some((r) => r.id === id)) {
+    saved = saved.filter((r) => r.id !== id);
   } else {
     const newRecipe = { id, title: "New Recipe", image: "noodles.png" };
     saved.unshift(newRecipe);
@@ -110,7 +160,7 @@ function toggleFavoriteRecipe(id) {
   let fav = getFavoriteRecipes();
 
   if (fav.includes(id)) {
-    fav = fav.filter(r => r !== id);
+    fav = fav.filter((r) => r !== id);
   } else {
     fav.unshift(id);
   }
@@ -125,7 +175,6 @@ function createCollection(name) {
   if (!n) return;
 
   const collections = getCollections();
-
   collections.unshift({ id: Date.now(), name: n, recipes: [] });
 
   setCollections(collections);
@@ -169,8 +218,7 @@ function renderSavedRecipes() {
 function renderFavorites() {
   const favIds = getFavoriteRecipes();
   const saved = getSavedRecipes();
-
-  const data = saved.filter(r => favIds.includes(r.id));
+  const data = saved.filter((r) => favIds.includes(r.id));
 
   if (!data.length) {
     profileOutput.innerHTML = `<p class="empty-message">No favorites.</p>`;
@@ -189,7 +237,7 @@ function renderCollections() {
     return;
   }
 
-  profileOutput.innerHTML = collections.map(c => `
+  profileOutput.innerHTML = collections.map((c) => `
     <div class="collection-card">
       <h3>${c.name}</h3>
       <p>${c.recipes.length} recipes</p>
@@ -208,8 +256,8 @@ function renderCurrentTab() {
 }
 
 /* Events */
-tabLinks.forEach(link => {
-  link.addEventListener("click", e => {
+tabLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
     setActiveTab(link.dataset.tab);
     renderCurrentTab();
