@@ -26,8 +26,6 @@ function applyTheme() {
     document.body.classList.toggle("dark-mode", savedTheme === "dark");
 }
 
-
-
 const input = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
 const label = document.getElementById("imageLabel");
@@ -42,14 +40,27 @@ input.addEventListener("change", () => {
     }
 });
 
-// chatgpt generated code for automatic bullet points, will read up abt more efficient ways to do this
-document.querySelector(".ingredients .placeholder")
-.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        document.execCommand("insertText", false, "\n• ");
-        e.preventDefault();
+const list = document.querySelector(".ingredients-list");
+
+// ensure at least one li exists
+list.addEventListener("focus", () => {
+    if (list.children.length === 0) {
+        const li = document.createElement("li");
+        list.appendChild(li);
     }
 });
+
+// prevent deleting last item
+list.addEventListener("keydown", (e) => {
+    const items = list.querySelectorAll("li");
+
+    if (e.key === "Backspace") {
+        if (items.length === 1 && items[0].innerText.trim() === "") {
+            e.preventDefault(); // keep one empty item
+        }
+    }
+});
+
 
 // POST RECIPE
 document.querySelector(".post-btn").addEventListener("click", () => {
