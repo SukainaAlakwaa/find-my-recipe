@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Profile data */
   const avatars = [
-    { img: "./images/avatar-noodles.png", name: "Cozy Noodles" },
-    { img: "./images/avatar-dumplings.png", name: "Humpy Dumpling" },
-    { img: "./images/avatar-toast.png", name: "Toasty Butter" },
-    { img: "./images/avatar-sushi.png", name: "Sleepy Sushi" },
-    { img: "./images/avatar-cookie.png", name: "Cookie Monster" },
-    { img: "./images/avatar-cake.png", name: "Chocolat Cake" }
+    { img: "../images/avatar-noodles.png", name: "Cozy Noodles" },
+    { img: "../images/avatar-dumplings.png", name: "Humpy Dumpling" },
+    { img: "../images/avatar-toast.png", name: "Toasty Butter" },
+    { img: "../images/avatar-sushi.png", name: "Sleepy Sushi" },
+    { img: "../images/avatar-cookie.png", name: "Cookie Monster" },
+    { img: "../images/avatar-cake.png", name: "Chocolat Cake" }
   ];
 
   const currentProfile = document.getElementById("currentProfile");
