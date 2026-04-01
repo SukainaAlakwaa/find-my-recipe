@@ -4,62 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile Page</title>
-  <link rel="stylesheet" href="find-my-recipe/css/profile.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
 
-  <!-- Google Icons for the settings gear -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
 
   <!-- TOP NAV -->
+  <header class="navbar">
+    <a href="../index.html" class="logo">
+      Find<span class="highlight">My</span>Recipe
+    </a>
 
+    <div class="nav-icons">
+      <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+      <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
+      <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+    </div>
+  </header>
 
-  <!-- PROFILE HEADER -->
+  <!-- Profile Header -->
   <section class="profile-header">
+
+    <!-- LEFT: AVATAR -->
     <div class="profile-left">
-      <img src="noodles.png" alt="Profile picture" class="profile-pic" />
+      <img src="noodles.png" alt="Profile picture" class="profile-pic" id="profileAvatar" />
     </div>
 
+    <!-- CENTER: NAME + TABS -->
     <div class="profile-center">
       <div class="username-row">
-        <h1>Cozy Noodles</h1>
-        <a href="#" class="settings-btn" aria-label="Settings">
+        <h1 id="profileUsername">Cozy Noodles</h1>
+        <a href="settings.html" class="settings-btn" aria-label="Settings">
           <span class="material-symbols-outlined">settings</span>
         </a>
       </div>
 
       <div class="profile-tabs">
-        <a href="#">SAVED RECIPES</a>
-        <a href="#">COLLECTIONS</a>
-        <a href="#">FAVORITES</a>
+        <a href="#" class="tab-link active" data-tab="saved">Saved Recipes</a>
+        <a href="#" class="tab-link" data-tab="collections">Collections</a>
+        <a href="#" class="tab-link" data-tab="favorites">Favorites</a>
       </div>
     </div>
 
+    <!-- RIGHT: CREATE BUTTON -->
     <div class="profile-right">
-      <a href="#" class="create-btn">Create</a>
+      <a href="addnew.html" class="create-btn">Create</a>
     </div>
+
   </section>
 
-  <!-- CONTENT -->
+  <!-- MAIN CONTENT -->
   <main class="content">
+
+    <!-- TOP TITLE -->
     <div class="content-top">
-      <h2>102 SAVED RECIPES</h2>
-
-      <div class="controls">
-        <button class="control-btn">
-          <span class="icon">☰</span>
-          <span>SORT</span>
-        </button>
-
-        <button class="control-btn">
-          <span class="icon">⌯</span>
-          <span>FILTER</span>
-        </button>
-      </div>
+      <h2 id="sectionTitle">Saved Recipes</h2>
     </div>
 
+    <!-- COLLECTIONS PANEL -->
+    <section id="collectionsPanel" class="collections-panel hidden">
+      <div class="collection-form">
+        <input type="text" id="collectionNameInput" placeholder="Enter collection name" />
+        <button id="addCollectionBtn">Add Collection</button>
+      </div>
+    </section>
+
+    <!-- RECIPES / COLLECTIONS OUTPUT -->
+    <section id="profileOutput" class="recipe-grid"></section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <p>@2026 FindMyRecipe All Rights Reserved</p>
+    </div>
+
+    <div class="footer-middle">
+      <h4>CONTACT US</h4>
+      <p>info@findmyrecipe.com</p>
+    </div>
+
+    <div class="footer-right">
+      <h4>FIND US ON</h4>
+      <div class="social-icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-tiktok"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/profile.js"></script>
 </body>
 </html>
