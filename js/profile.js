@@ -77,21 +77,15 @@ const addCollectionBtn = document.getElementById("addCollectionBtn");
 /* Starter data */
 function addStarterData() {
   if (!localStorage.getItem(SAVED_KEY)) {
-    setSavedRecipes([
-      { id: 1, title: "Pasta", image: "noodles.png" },
-      { id: 2, title: "Burger", image: "noodles.png" },
-      { id: 3, title: "Salad", image: "noodles.png" }
-    ]);
+    setSavedRecipes([]);
   }
 
   if (!localStorage.getItem(FAVORITES_KEY)) {
-    setFavoriteRecipes([1]);
+  setFavoriteRecipes([]);
   }
 
   if (!localStorage.getItem(COLLECTIONS_KEY)) {
-    setCollections([
-      { id: Date.now(), name: "Quick Meals", recipes: [1, 2] }
-    ]);
+    setCollections([]);
   }
 }
 

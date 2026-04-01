@@ -1,4 +1,3 @@
-// ================= APPLY SAVED THEME =================
 const savedTheme = localStorage.getItem("theme") || "light";
 
 if (savedTheme === "dark") {
@@ -17,6 +16,29 @@ let heroRecipes = [];
 let currentHeroIndex = 0;
 let heroInterval = null;
 let suggestionTimeout = null;
+
+// Save recipe in the same format the profile page uses
+function saveRecipeToProfile(meal) {
+  let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+  const recipeToSave = {
+    id: Number(meal.idMeal),
+    title: meal.strMeal,
+    image: meal.strMealThumb
+  };
+
+  const alreadySaved = savedRecipes.some(
+    (recipe) => recipe.id === recipeToSave.id
+  );
+
+  if (!alreadySaved) {
+    savedRecipes.unshift(recipeToSave);
+    localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+    return true;
+  }
+
+  return false;
+}
 
 // Load hero images from API
 async function loadHeroImages(query = "chicken") {
@@ -59,14 +81,30 @@ async function displayRecipes(query = "chicken") {
   }
 
   recipes.slice(0, 6).forEach((meal) => {
-    const card = document.createElement("a");
+    const card = document.createElement("div");
     card.classList.add("recipe-card");
-    card.href = `pages/recipe.html?id=${meal.idMeal}`;
 
     card.innerHTML = `
-      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-      <h3>${meal.strMeal}</h3>
+      <a href="pages/recipe.html?id=${meal.idMeal}" class="recipe-link">
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+        <h3>${meal.strMeal}</h3>
+      </a>
+      <button class="save-btn">Save</button>
     `;
+
+    const saveBtn = card.querySelector(".save-btn");
+
+    saveBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const saved = saveRecipeToProfile(meal);
+
+      if (saved) {
+        saveBtn.textContent = "Saved ✓";
+      } else {
+        saveBtn.textContent = "Already Saved";
+      }
+    });
 
     recipesContainer.appendChild(card);
   });

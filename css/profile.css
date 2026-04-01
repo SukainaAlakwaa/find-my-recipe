@@ -52,6 +52,10 @@ body.dark-mode footer a {
 }
 
 .logo {
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.logo {
   font-size: 2rem;
   font-weight: 700;
   color: #5d7c4f;
@@ -320,6 +324,33 @@ body.dark-mode footer a {
 
 .footer p {
   font-size: 1.1rem;
+}
+
+.footer-link {
+  color: #5d7c4f;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-right-group {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.footer-middle,
+.footer-right {
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  font-size: 2rem;
 }
 
 .social-icons {
