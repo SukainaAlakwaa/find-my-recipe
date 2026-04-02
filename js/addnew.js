@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadProfile();
     setupImageUpload();
     setupIngredientsList();
-    setupPostButton();
+    setupCreateButton();
 });
 
 
@@ -25,7 +25,7 @@ function setupImageUpload() {
         const file = input.files[0];
         if (!file) return;
 
-        preview.src = URL.createObjectURL(file); // creates temporary url from selected image file, sets the p
+        preview.src = URL.createObjectURL(file); // creates temporary url from selected image file, sets the preview
         preview.style.display = "block"; // display image, previously hidden
         label.style.display = "none"; // hides "upload image" text
     // end of AI generated code
@@ -67,27 +67,25 @@ function setupIngredientsList() {
 }
 
 
-// POST RECIPE
-function setupPostButton() {
+// CREATE RECIPE
+function setupCreateButton() {
     const createBtn = document.querySelector(".create-btn");
     if (!createBtn) return;
 
-    createBtn.addEventListener("click", handlePost);
+    createBtn.addEventListener("click", handleCreate);
 }
-// connects to the profile page
-function handlePost() {
-    const title = document.querySelector(".title .placeholder")?.innerText.trim(); // removes extra spaces
-    const category = document.querySelectorAll(".small .placeholder")[0]?.innerText.trim();
-    const area = document.querySelectorAll(".small .placeholder")[1]?.innerText.trim();
 
-    const ingredients = Array.from(document.querySelectorAll(".ingredients-list li"))
-        .map(li => li.innerText.trim())
-        .filter(text => text !== "");
-
-    const directions = document.querySelector(".directions .placeholder")?.innerText.trim();
+// connects to the profile page, title/image works but nothing else bc recipe loading is currently only API-based
+function handleCreate() {
+    const title = document.querySelector(".title .placeholder")?.innerText.trim();
+    // const category = document.querySelectorAll(".small .placeholder")[0]?.innerText.trim();
+    // const area = document.querySelectorAll(".small .placeholder")[1]?.innerText.trim();
+    // const directions = document.querySelector(".directions .placeholder")?.innerText.trim();
+    // const ingredients = Array.from(document.querySelectorAll(".ingredients-list li"))
+    //     .map(li => li.innerText.trim()) 
+    //     .filter(text => text !== ""); 
 
     const preview = document.getElementById("preview");
-
     const image = (preview && preview.src && preview.style.display === "block")
         ? preview.src
         : "../images/recipe-default.png";
@@ -101,15 +99,15 @@ function handlePost() {
         id: String(Date.now()),
         title,
         image,
-        category,
-        area,
-        ingredients,
-        directions
+        // category,
+        // area,
+        // ingredients,
+        // directions
     };
 
     saveRecipe(newRecipe);
 
-    // redirect after saving
+    // sends to profile page after saving
     window.location.href = "../pages/profile.html";
 }
 
@@ -126,13 +124,13 @@ function saveRecipe(recipe) {
 
     let myRecipes = collections.find(c => c.name === "My Recipes");
 
-    // if My Recipes collection doesn't exist, then create it
+    // if My Recipes doesn't exist, then create it
     if (!myRecipes) {
         myRecipes = {
             id: String(Date.now()),
             name: "My Recipes",
             recipes: [],
-            locked: true // defaulting to locked so that users dont accidentally delete it
+            locked: true // defaulting to locked so that users dont accidentally delete the collection
         };
         collections.unshift(myRecipes);
     }
@@ -146,8 +144,8 @@ function saveRecipe(recipe) {
 
 // PROFILE
 function loadProfile() {
-    const currentProfile = document.getElementById("currentProfile");
 
+    const currentProfile = document.getElementById("currentProfile");
     const avatar = localStorage.getItem("profileAvatar");
     const username = localStorage.getItem("profileUsername");
 
