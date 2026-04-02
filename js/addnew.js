@@ -86,46 +86,48 @@ function renderLocalRecipe(recipe) {
   `;
 }
 
-// ================= RENDER API RECIPE =================
-function renderAPIRecipe(recipe) {
-  recipeDetailsContainer.innerHTML = `
-    <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="detail-image" />
-    <h1>${recipe.strMeal}</h1>
-    <p><strong>Category:</strong> ${recipe.strCategory || "N/A"}</p>
-    <p><strong>Area:</strong> ${recipe.strArea || "N/A"}</p>
-
-    <h2>Ingredients</h2>
-    <ul>
-      ${getIngredientsList(recipe)}
-    </ul>
-
-    <h2>Instructions</h2>
-    <div class="instructions">
-      <p>${recipe.strInstructions ? recipe.strInstructions.replace(/\r\n/g, "<br><br>") : "No instructions available."}</p>
-    </div>
-  `;
+function applyTheme() {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.body.classList.toggle("dark-mode", savedTheme === "dark");
 }
 
-// ================= LOAD RECIPE DETAILS =================
-async function loadRecipeDetails() {
-  const selectedRecipe = getSelectedRecipe();
 
-  // If recipe came from Saved / Favorites / Collections
-  if (selectedRecipe) {
-    localStorage.removeItem("selectedRecipe");
 
-    // Custom recipe made in Add New
-    if (selectedRecipe.directions || selectedRecipe.ingredients) {
-      renderLocalRecipe(selectedRecipe);
-      return;
+const input = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+const label = document.getElementById("imageLabel");
+
+// chatgpt generated code for image preview, works, will have to add a way to change img if user wants
+input.addEventListener("change", () => {
+    const file = input.files[0];
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+        label.style.display = "none";
     }
+});
 
-    // API recipe saved from home page
-    if (selectedRecipe.id) {
-      const apiRecipe = await fetchRecipeDetails(selectedRecipe.id);
+// chatgpt generated code for automatic bullet points, will read up abt more efficient ways to do this
+document.querySelector(".ingredients .placeholder")
+.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        document.execCommand("insertText", false, "\n• ");
+        e.preventDefault();
+    }
+});
 
-      if (apiRecipe) {
-        renderAPIRecipe(apiRecipe);
+// POST RECIPE
+document.querySelector(".post-btn").addEventListener("click", () => {
+    const title = document.querySelector(".title .placeholder").innerText.trim();
+    const category = document.querySelectorAll(".small .placeholder")[0].innerText.trim();
+    const area = document.querySelectorAll(".small .placeholder")[1].innerText.trim();
+    const ingredients = document.querySelector(".ingredients .placeholder").innerText.trim();
+    const directions = document.querySelector(".directions .placeholder").innerText.trim();
+
+    const image = preview.src || "../images/recipe-default.png";
+
+    if (!title) {
+        alert("Please add a title!");
         return;
       }
     }

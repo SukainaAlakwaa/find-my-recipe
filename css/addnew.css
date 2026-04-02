@@ -16,7 +16,8 @@ h1,
 .placeholder,
 .post-btn,
 label span,
-.current-profile-info p  {
+.current-profile-info p,
+.card li  {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
@@ -228,6 +229,15 @@ body.dark-mode .post-btn:hover {
 
 .ingredients {
     height: 250px;
+}
+
+.ingredients-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.ingredients-list li {
+    margin-bottom: 6px;
 }
 
 .directions {
