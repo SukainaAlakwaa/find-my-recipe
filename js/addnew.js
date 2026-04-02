@@ -67,10 +67,16 @@ document.querySelector(".post-btn").addEventListener("click", () => {
     const title = document.querySelector(".title .placeholder").innerText.trim();
     const category = document.querySelectorAll(".small .placeholder")[0].innerText.trim();
     const area = document.querySelectorAll(".small .placeholder")[1].innerText.trim();
-    const ingredients = document.querySelector(".ingredients .placeholder").innerText.trim();
+
+    const ingredients = Array.from(document.querySelectorAll(".ingredients-list li"))
+        .map(li => li.innerText.trim())
+        .filter(text => text !== "");
+
     const directions = document.querySelector(".directions .placeholder").innerText.trim();
 
-    const image = preview.src || "../images/recipe-default.png";
+    const image = preview.src && preview.style.display === "block"
+        ? preview.src
+        : "../images/recipe-default.png";
 
     if (!title) {
         alert("Please add a title!");
@@ -78,7 +84,7 @@ document.querySelector(".post-btn").addEventListener("click", () => {
     }
 
     const newRecipe = {
-        id: Date.now(),
+        id: String(Date.now()), // 🔥 FIXED
         title,
         image,
         category,
@@ -88,8 +94,6 @@ document.querySelector(".post-btn").addEventListener("click", () => {
     };
 
     saveRecipe(newRecipe);
-
-    // sending to profile page
     window.location.href = "../pages/profile.html";
 });
 
@@ -104,15 +108,16 @@ function saveRecipe(recipe) {
 
     let myRecipes = collections.find(c => c.name === "My Recipes");
 
-    // if My Recipes collection doesn't exist, then we create it
+    // if My Recipes collection doesn't exist, then  create it
     if (!myRecipes) {
-        myRecipes = {
-            id: Date.now(),
-            name: "My Recipes",
-            recipes: []
-        };
-        collections.unshift(myRecipes);
-    }
+    myRecipes = {
+        id: String(Date.now()),
+        name: "My Recipes",
+        recipes: [],
+        locked: true // defaulting to locked so that users dont accidentally delete it
+    };
+    collections.unshift(myRecipes);
+}
 
     // add recipe to collection
     myRecipes.recipes.unshift(recipe);
