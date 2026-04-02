@@ -12,8 +12,15 @@
 .logo {
   font-family: 'Glacial Indifference', sans-serif;
   font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 900;
+  font-weight: 700;
   color: #5d7c4f;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
 }
 
 .highlight {
