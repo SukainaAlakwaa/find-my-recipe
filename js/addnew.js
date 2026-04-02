@@ -67,10 +67,10 @@ function setupIngredientsList() {
 
 // POST RECIPE
 function setupPostButton() {
-    const postBtn = document.querySelector(".post-btn");
-    if (!postBtn) return;
+    const createBtn = document.querySelector(".create-btn");
+    if (!createBtn) return;
 
-    postBtn.addEventListener("click", handlePost);
+    createBtn.addEventListener("click", handlePost);
 }
 
 function handlePost() {
