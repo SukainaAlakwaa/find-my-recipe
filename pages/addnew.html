@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Add New Recipe</title>
-<link rel="stylesheet" href="../css/addnew.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference-2">
-<script src="../js/addnew.js" defer></script>
-<link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <title>Add New Recipe</title>
+    <link rel="stylesheet" href="../css/addnew.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference-2">
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <script src="../js/addnew.js" defer></script>
 </head>
+
 <body>
 
   <header class="navbar">
     <a href="../index.html" class="logo">
-      Find<span class="highlight">My</span>Recipe
+        <img src="../images/logo.png" alt="logo" class="logo-icon">
+        Find<span class="highlight">My</span>Recipe
     </a>
 
     <div class="nav-icons">
-      <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
-      <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
-      <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+        <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+        <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
+        <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
     </div>
-  </header>
+    </header>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Profile Header -->
-  <div class="profile-header">
-    <!-- PROFILE INFO -->
-    <div class="profile-left">
-          <div id="currentProfile"></div>
+    <!-- PROFILE HEADER -->
+    <div class="profile-header">
+
+        <!-- PROFILE INFO -->
+        <div class="profile-left">
+            <div id="currentProfile"></div>
+        </div>
+
     </div>
 
-</div>
-
+    <!-- GRID -->
     <div class="grid">
+
+        <!-- RECIPE IMAGE -->
         <div class="card image-upload">
             <input type="file" id="imageInput" hidden>
+
             <label for="imageInput" id="imageLabel">
                 <i class="fa-solid fa-upload"></i>
                 <span>Upload image here</span>
-            </label>            
-            <img id="preview" />
+            </label>
+
+            <div class="image-preview-wrapper">
+                <img id="preview" />
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+            </div>
         </div>
 
+        <!-- RECIPE TITLE -->
         <div class="card title">
             <h1>Title</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Add recipe title"></div>
         </div>
 
+        <!-- RECIPE CATEGORY -->        
         <div class="card small">
             <h1>Category</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Ex: Chicken, Beef"></div> 
         </div>
 
+        <!-- RECIPE AREA -->
         <div class="card small">
             <h1>Area</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Ex: Italian, Mexican"></div>
         </div>
 
+        <!-- RECIPE INGREDIENTS -->
         <div class="card ingredients">
             <h1>Ingredients</h1>
                 <ul class="ingredients-list" contenteditable="true">
@@ -68,13 +81,15 @@
                 </ul>
         </div>
 
+        <!-- RECIPE DIRECTION -->
         <div class="card directions">
             <h1>Directions</h1>
             <div class="placeholder" contenteditable="true" data-placeholder="Add directions"></div>
         </div>
 
-        <div class="post">
-            <button class="post-btn">Post</button>
+        <!-- CREATE RECIPE -->
+        <div class="create">
+            <button class="create-btn">Create</button>
         </div>
 
 
