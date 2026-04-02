@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
 }
 
-/* Brand font */
+/* BRAND FONT */
 .logo,
 h1,
 .placeholder,
@@ -26,27 +26,23 @@ label span,
 }
 
 /* GLOBAL DARK MODE */
-/* Base */
 body.dark-mode {
   background: #1f2521;
   color: #f5f1e8;
 }
 
-/* Navbar / Header */
 body.dark-mode .navbar,
 body.dark-mode header {
   background: #2b2b2b;
   color: #f5f5f5;
 }
 
-/* Footer */
 body.dark-mode .footer,
 body.dark-mode footer {
   background: #222;
   color: #f5f5f5;
 }
 
-/* Links (nav + footer) */
 body.dark-mode .navbar a,
 body.dark-mode .footer a,
 body.dark-mode header a,
@@ -77,7 +73,7 @@ body.dark-mode .create-btn:hover {
   background-color: #ddd6c3;
 }
 
-/* Navigation bar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -105,7 +101,6 @@ body.dark-mode .create-btn:hover {
   font-weight: 700;
 }
 
-/* Navigation icons */
 .nav-icons {
   display: flex;
   gap: 24px;
@@ -124,7 +119,6 @@ body.dark-mode .create-btn:hover {
   align-items: center;
 }
 
-/* Profile header */
 .profile-header {
   display: flex;
   justify-content: space-between;
@@ -135,10 +129,8 @@ body.dark-mode .create-btn:hover {
 }
 
 .current-profile-card {
-  /* padding: 0; */
   height: 10%;
   display: flex;
-  /* align-items: left; */
   justify-content: left;
   gap: min(1.5rem, 3vw);
 }
@@ -180,6 +172,7 @@ body.dark-mode .create-btn:hover {
   color: #556b4f;
 }
 
+/* image upload */
 .image-upload {
   grid-row: span 2;
   display: flex;
@@ -234,7 +227,7 @@ body.dark-mode .create-btn:hover {
     display: none;
 }
 
-/* IMAGE EDIT BUTTON */
+/* image edit button */
 .edit-btn {
   display: none;
 }
@@ -259,6 +252,7 @@ body.dark-mode .create-btn:hover {
   opacity: 0.8;
 }
 
+/* other recipe info */
 .title {
   grid-column: span 2;
   height: max(12vh, 100px);
@@ -301,7 +295,6 @@ body.dark-mode .create-btn:hover {
     height: 50%;
 }
 
-
 h1 {
     margin: 8px 0 8px;
     padding: 0;
@@ -316,6 +309,7 @@ h1 {
     font-size: max(2.5vh, 16px);
 }
 
+/* create button */
 .create {
   margin: 0;
   grid-column: span 3;
