@@ -17,6 +17,21 @@ body.dark-mode {
   color: #f5f1e8;
 }
 
+/* SEARCH DARK MODE */
+body.dark-mode .suggestions-box {
+  background-color: #2b2b2b;
+  border: 1px solid #4a5a4d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .suggestion-item {
+  color: #f5f1e8;
+}
+
+body.dark-mode .suggestion-item:hover {
+  background-color: #3a463c;
+}
+
 /* Navbar / Header */
 body.dark-mode .navbar,
 body.dark-mode .site-header,
