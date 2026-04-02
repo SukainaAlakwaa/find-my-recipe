@@ -12,26 +12,31 @@
   <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Find<span class="highlight">My</span>Recipe</div>
+    <header class="navbar">
+      <a href="index.html" class="logo-link">
+        <div class="logo">Find<span class="highlight">My</span>Recipe</div>
+      </a>
 
-        <div class="search-wrapper">
+      <div class="search-wrapper">
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="search" autocomplete="off" />
-            <button id="searchBtn" type="button">
+          <input type="text" id="searchInput" placeholder="search" autocomplete="off" />
+          <button id="searchBtn" type="button">
             <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+          </button>
         </div>
-
         <div id="suggestionsBox" class="suggestions-box"></div>
-        </div>
+      </div>
 
-    <div class="nav-icons">
-      <a href="pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
-      <a href="pages/profile.html"><i class="fa-solid fa-user"></i></a>
-      <a href="pages/settings.html"><i class="fa-solid fa-gear"></i></a>
-    </div>
-  </header>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="nav-icons" id="navMenu">
+        <a href="pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+        <a href="pages/profile.html"><i class="fa-solid fa-user"></i></a>
+        <a href="pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+      </div>
+    </header>
 
   <main>
     <section class="hero" id="hero">
