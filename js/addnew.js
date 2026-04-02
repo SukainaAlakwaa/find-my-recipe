@@ -1,97 +1,30 @@
-// ================= APPLY SAVED THEME =================
-const savedTheme = localStorage.getItem("theme") || "light";
+document.addEventListener("DOMContentLoaded", () => {
+    applyTheme();
+    loadProfile();
+});
 
-if (savedTheme === "dark") {
-  document.body.classList.add("dark-mode");
-} else {
-  document.body.classList.remove("dark-mode");
-}
+function loadProfile() {
+    const currentProfile = document.getElementById("currentProfile");
 
-const recipeDetailsContainer = document.getElementById("recipeDetails");
+    const avatar = localStorage.getItem("profileAvatar");
+    const username = localStorage.getItem("profileUsername");
 
-// ================= GET URL ID =================
-function getRecipeIdFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get("id");
-}
+    if (!avatar || !username) return;
 
-// ================= GET SELECTED RECIPE =================
-function getSelectedRecipe() {
-  return JSON.parse(localStorage.getItem("selectedRecipe"));
-}
-
-// ================= FETCH API RECIPE =================
-async function fetchRecipeDetails(id) {
-  try {
-    const response = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch recipe details");
-    }
-
-    const data = await response.json();
-    return data.meals ? data.meals[0] : null;
-  } catch (error) {
-    console.error("Error fetching recipe details:", error);
-    return null;
-  }
-}
-
-// ================= API INGREDIENTS =================
-function getIngredientsList(recipe) {
-  let ingredients = "";
-
-  for (let i = 1; i <= 20; i++) {
-    const ingredient = recipe[`strIngredient${i}`];
-    const measure = recipe[`strMeasure${i}`];
-
-    if (ingredient && ingredient.trim() !== "") {
-      ingredients += `<li>${measure ? measure : ""} ${ingredient}</li>`;
-    }
-  }
-
-  return ingredients;
-}
-
-// ================= LOCAL INGREDIENTS =================
-function getLocalIngredientsList(recipe) {
-  if (!recipe.ingredients) return "<li>No ingredients available.</li>";
-
-  return recipe.ingredients
-    .split("\n")
-    .filter(line => line.trim() !== "")
-    .map(line => `<li>${line}</li>`)
-    .join("");
-}
-
-// ================= RENDER LOCAL RECIPE =================
-function renderLocalRecipe(recipe) {
-  recipeDetailsContainer.innerHTML = `
-    <img src="${recipe.image}" alt="${recipe.title}" class="detail-image" />
-    <h1>${recipe.title}</h1>
-    <p><strong>Category:</strong> ${recipe.category || "N/A"}</p>
-    <p><strong>Area:</strong> ${recipe.area || "N/A"}</p>
-
-    <h2>Ingredients</h2>
-    <ul>
-      ${getLocalIngredientsList(recipe)}
-    </ul>
-
-    <h2>Instructions</h2>
-    <div class="instructions">
-      <p>${recipe.directions ? recipe.directions.replace(/\n/g, "<br><br>") : "No instructions available."}</p>
-    </div>
-  `;
+    currentProfile.innerHTML = `
+        <div class="current-profile-card">
+            <img src="${avatar}" alt="${username}">
+            <div class="current-profile-info">
+                <p>${username}</p>
+            </div>
+        </div>
+    `;
 }
 
 function applyTheme() {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.body.classList.toggle("dark-mode", savedTheme === "dark");
 }
-
-
 
 const input = document.getElementById("imageInput");
 const preview = document.getElementById("preview");
@@ -107,14 +40,27 @@ input.addEventListener("change", () => {
     }
 });
 
-// chatgpt generated code for automatic bullet points, will read up abt more efficient ways to do this
-document.querySelector(".ingredients .placeholder")
-.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        document.execCommand("insertText", false, "\n• ");
-        e.preventDefault();
+const list = document.querySelector(".ingredients-list");
+
+// ensure at least one li exists
+list.addEventListener("focus", () => {
+    if (list.children.length === 0) {
+        const li = document.createElement("li");
+        list.appendChild(li);
     }
 });
+
+// prevent deleting last item
+list.addEventListener("keydown", (e) => {
+    const items = list.querySelectorAll("li");
+
+    if (e.key === "Backspace") {
+        if (items.length === 1 && items[0].innerText.trim() === "") {
+            e.preventDefault(); // keep one empty item
+        }
+    }
+});
+
 
 // POST RECIPE
 document.querySelector(".post-btn").addEventListener("click", () => {
@@ -129,26 +75,47 @@ document.querySelector(".post-btn").addEventListener("click", () => {
     if (!title) {
         alert("Please add a title!");
         return;
-      }
     }
-  }
 
-  // Fallback: recipe opened directly from API page with ?id=
-  const recipeId = getRecipeIdFromURL();
+    const newRecipe = {
+        id: Date.now(),
+        title,
+        image,
+        category,
+        area,
+        ingredients,
+        directions
+    };
 
-  if (!recipeId) {
-    recipeDetailsContainer.innerHTML = "<p>Recipe not found.</p>";
-    return;
-  }
+    saveRecipe(newRecipe);
 
-  const recipe = await fetchRecipeDetails(recipeId);
+    // sending to profile page
+    window.location.href = "../pages/profile.html";
+});
 
-  if (!recipe) {
-    recipeDetailsContainer.innerHTML = "<p>Could not load recipe details.</p>";
-    return;
-  }
+function saveRecipe(recipe) {
+    // save to Saved Recipes
+    const saved = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+    saved.unshift(recipe);
+    localStorage.setItem("savedRecipes", JSON.stringify(saved));
 
-  renderAPIRecipe(recipe);
+    // save to My Recipes collection
+    let collections = JSON.parse(localStorage.getItem("recipeCollections")) || [];
+
+    let myRecipes = collections.find(c => c.name === "My Recipes");
+
+    // if My Recipes collection doesn't exist, then we create it
+    if (!myRecipes) {
+        myRecipes = {
+            id: Date.now(),
+            name: "My Recipes",
+            recipes: []
+        };
+        collections.unshift(myRecipes);
+    }
+
+    // add recipe to collection
+    myRecipes.recipes.unshift(recipe);
+
+    localStorage.setItem("recipeCollections", JSON.stringify(collections));
 }
-
-loadRecipeDetails();
