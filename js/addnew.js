@@ -84,7 +84,7 @@ document.querySelector(".post-btn").addEventListener("click", () => {
     }
 
     const newRecipe = {
-        id: String(Date.now()), // 🔥 FIXED
+        id: String(Date.now()),
         title,
         image,
         category,
