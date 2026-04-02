@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // IMAGE UPLOAD
 function setupImageUpload() {
+    // load all elements as vars that you can use in js
     const input = document.getElementById("imageInput");
     const preview = document.getElementById("preview");
     const label = document.getElementById("imageLabel");
     const editBtn = document.querySelector(".edit-btn");
-    const wrapper = document.querySelector(".image-preview-wrapper");
+    const wrapper = document.querySelector(".image-preview-wrapper"); 
 
+    // if these elements don't exist, exit function
     if (!input || !preview || !label || !editBtn || !wrapper) return;
 
     // chatgpt generated code for image preview
@@ -23,9 +25,9 @@ function setupImageUpload() {
         const file = input.files[0];
         if (!file) return;
 
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-        label.style.display = "none";
+        preview.src = URL.createObjectURL(file); // creates temporary url from selected image file, sets the p
+        preview.style.display = "block"; // display image, previously hidden
+        label.style.display = "none"; // hides "upload image" text
     // end of AI generated code
 
         // show edit button + enable hover state
@@ -58,7 +60,7 @@ function setupIngredientsList() {
 
         if (e.key === "Backspace") {
             if (items.length === 1 && items[0].innerText.trim() === "") {
-                e.preventDefault(); // keep one empty item
+                e.preventDefault(); // keep at least one empty item
             }
         }
     });
@@ -72,9 +74,9 @@ function setupPostButton() {
 
     createBtn.addEventListener("click", handlePost);
 }
-
+// connects to the profile page
 function handlePost() {
-    const title = document.querySelector(".title .placeholder")?.innerText.trim();
+    const title = document.querySelector(".title .placeholder")?.innerText.trim(); // removes extra spaces
     const category = document.querySelectorAll(".small .placeholder")[0]?.innerText.trim();
     const area = document.querySelectorAll(".small .placeholder")[1]?.innerText.trim();
 
