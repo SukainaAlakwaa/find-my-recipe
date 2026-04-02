@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Add New Recipe</title>
-<link rel="stylesheet" href="../css/addnew.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference-2">
-<script src="../js/addnew.js" defer></script>
-<link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <title>Add New Recipe</title>
+    <link rel="stylesheet" href="../css/addnew.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference-2">
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <script src="../js/addnew.js" defer></script>
 </head>
+
 <body>
 
   <header class="navbar">
     <a href="../index.html" class="logo">
-      Find<span class="highlight">My</span>Recipe
+        Find<span class="highlight">My</span>Recipe
     </a>
 
     <div class="nav-icons">
-      <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
-      <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
-      <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+        <a href="../pages/addnew.html"><i class="fa-regular fa-square-plus"></i></a>
+        <a href="../pages/profile.html"><i class="fa-solid fa-user"></i></a>
+        <a href="../pages/settings.html"><i class="fa-solid fa-gear"></i></a>
     </div>
-  </header>
+    </header>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Profile Header -->
-  <div class="profile-header">
-    <!-- PROFILE INFO -->
-    <div class="profile-left">
-          <div id="currentProfile"></div>
+    <!-- PROFILE HEADER -->
+    <div class="profile-header">
+
+        <!-- PROFILE INFO -->
+        <div class="profile-left">
+            <div id="currentProfile"></div>
+        </div>
+
     </div>
-
-</div>
 
     <div class="grid">
         <div class="card image-upload">
             <input type="file" id="imageInput" hidden>
+
             <label for="imageInput" id="imageLabel">
                 <i class="fa-solid fa-upload"></i>
                 <span>Upload image here</span>
-            </label>            
-            <img id="preview" />
+            </label>
+
+            <div class="image-preview-wrapper">
+                <img id="preview" />
+                <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
+            </div>
         </div>
 
         <div class="card title">

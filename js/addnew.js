@@ -1,6 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
     applyTheme();
     loadProfile();
+
+    const input = document.getElementById("imageInput");
+    const preview = document.getElementById("preview");
+    const label = document.getElementById("imageLabel");
+    const editBtn = document.querySelector(".edit-btn");
+
+    // chatgpt generated code for image preview
+    input.addEventListener("change", () => {
+        const file = input.files[0];
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+            label.style.display = "none";
+    // end of AI generated code
+
+            document.querySelector(".image-preview-wrapper").classList.add("has-image");
+        }
+    });
+
+    // allows user to edit the picture they chose
+    editBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        input.click();
+    });
 });
 
 function loadProfile() {
@@ -25,20 +49,6 @@ function applyTheme() {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.body.classList.toggle("dark-mode", savedTheme === "dark");
 }
-
-const input = document.getElementById("imageInput");
-const preview = document.getElementById("preview");
-const label = document.getElementById("imageLabel");
-
-// chatgpt generated code for image preview, works, will have to add a way to change img if user wants
-input.addEventListener("change", () => {
-    const file = input.files[0];
-    if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.style.display = "block";
-        label.style.display = "none";
-    }
-});
 
 const list = document.querySelector(".ingredients-list");
 
