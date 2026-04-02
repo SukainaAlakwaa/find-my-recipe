@@ -54,6 +54,29 @@ body.dark-mode .suggestion-item:hover {
   background-color: #3a463c;
 }
 
+/* Navbar / Header */
+body.dark-mode .navbar,
+body.dark-mode .site-header,
+body.dark-mode header {
+  background: #2b2b2b;
+  color: #f5f5f5;
+}
+
+/* Footer */
+body.dark-mode .footer,
+body.dark-mode footer {
+  background: #222;
+  color: #f5f5f5;
+}
+
+/* Links (nav + footer) */
+body.dark-mode .navbar a,
+body.dark-mode .footer a,
+body.dark-mode header a,
+body.dark-mode footer a {
+  color: #f5f5f5;
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
