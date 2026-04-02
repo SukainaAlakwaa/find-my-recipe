@@ -155,39 +155,48 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
   });
 
-  /* FAQ */
-  const faqList = document.getElementById("faqList");
+/* FAQ */
+const faqList = document.getElementById("faqList");
 
-  const faqs = [
-    ["How do I change my avatar?", "Go to Profile in Settings and choose from the preset icons."],
-    ["How do I switch dark mode?", "Go to Display and select Dark Mode."],
-    ["Do I need an account?", "No. This website does not require an account. Your data is stored locally on your device, and you can personalize your profile by selecting an avatar."],
-    ["Is my account completely anonymous?", "Yes. This platform does not require any personal information. You are only identified by your chosen avatar."],
-    ["How do I contact support?", "Use the contact form in the Help & Support section to report bugs and give feedback."]
-  ];
+const faqs = [
+  ["How do I change my avatar?", "Go to Profile in Settings and choose from the preset icons."],
+  ["How do I switch dark mode?", "Go to Display and select Dark Mode."],
+  ["Do I need an account?", "No. This website does not require an account. Your data is stored locally on your device."],
+  ["Is my account completely anonymous?", "Yes. You are only identified by your chosen avatar."],
+  ["How do I contact support?", "Use the contact form in the Help & Support section."]
+];
 
-  if (faqList) {
-    faqList.innerHTML = faqs.map(([q, a]) => `
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>${q}</span>
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <p>${a}</p>
-        </div>
+if (faqList) {
+  faqList.innerHTML = faqs.map(([q, a]) => `
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        <span>${q}</span>
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>${a}</p>
       </div>
-    `).join("");
+    </div>
+  `).join("");
 
-    faqList.addEventListener("click", (e) => {
-      const button = e.target.closest(".faq-question");
-      if (!button) return;
+  faqList.addEventListener("click", (e) => {
+    const button = e.target.closest(".faq-question");
+    if (!button) return;
 
-      const item = button.parentElement;
-      const answer = button.nextElementSibling;
+    const item = button.parentElement;
+    const answer = button.nextElementSibling;
+    const isOpen = answer.style.display === "block";
 
-      item.classList.toggle("active");
-      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    faqList.querySelectorAll(".faq-item").forEach(faq => {
+      faq.classList.remove("active");
+      faq.querySelector(".faq-answer").style.display = "none";
     });
-  }
+
+    if (!isOpen) {
+      item.classList.add("active");
+      answer.style.display = "block";
+    }
+  });
+}
+
 });
