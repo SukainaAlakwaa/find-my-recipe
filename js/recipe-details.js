@@ -1,4 +1,3 @@
-// ================= APPLY SAVED THEME =================
 const savedTheme = localStorage.getItem("theme") || "light";
 
 if (savedTheme === "dark") {
@@ -7,11 +6,10 @@ if (savedTheme === "dark") {
   document.body.classList.remove("dark-mode");
 }
 
-// ================= ELEMENTS =================
 const recipeDetailsContainer = document.getElementById("recipeDetails");
 const backBtn = document.getElementById("backBtn");
 
-// ================= BACK BUTTON =================
+// back button
 const fromPage = localStorage.getItem("fromPage");
 
 if (backBtn) {
@@ -24,18 +22,18 @@ if (backBtn) {
   }
 }
 
-// ================= GET URL ID =================
+// Get url id
 function getRecipeIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
 }
 
-// ================= GET SELECTED RECIPE =================
+// get selected recipes
 function getSelectedRecipe() {
   return JSON.parse(localStorage.getItem("selectedRecipe"));
 }
 
-// ================= FETCH API RECIPE =================
+// Fetch api recipe
 async function fetchRecipeDetails(id) {
   try {
     const response = await fetch(
@@ -54,7 +52,7 @@ async function fetchRecipeDetails(id) {
   }
 }
 
-// ================= API INGREDIENTS =================
+// api integration
 function getIngredientsList(recipe) {
   let ingredients = "";
 
@@ -70,7 +68,7 @@ function getIngredientsList(recipe) {
   return ingredients;
 }
 
-// ================= LOCAL INGREDIENTS =================
+// local integration
 function getLocalIngredientsList(recipe) {
   if (!recipe.ingredients) return "<li>No ingredients available.</li>";
 
@@ -81,7 +79,7 @@ function getLocalIngredientsList(recipe) {
     .join("");
 }
 
-// ================= RENDER LOCAL RECIPE =================
+// local recipe
 function renderLocalRecipe(recipe) {
   recipeDetailsContainer.innerHTML = `
     <img src="${recipe.image}" alt="${recipe.title}" class="detail-image" />
@@ -101,7 +99,7 @@ function renderLocalRecipe(recipe) {
   `;
 }
 
-// ================= RENDER API RECIPE =================
+// render api recipe
 function renderAPIRecipe(recipe) {
   recipeDetailsContainer.innerHTML = `
     <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="detail-image" />
@@ -121,7 +119,7 @@ function renderAPIRecipe(recipe) {
   `;
 }
 
-// ================= LOAD RECIPE DETAILS =================
+// load recipe
 async function loadRecipeDetails() {
   const selectedRecipe = getSelectedRecipe();
 
