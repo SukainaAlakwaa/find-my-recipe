@@ -23,6 +23,22 @@ body {
   font-family: 'Glacial Indifference', sans-serif;
 }
 
+/* ================= DARK MODE ================= */
+body.dark-mode {
+  background: #1f2521;
+  color: #f5f1e8;
+}
+
+/* Example elements */
+body.dark-mode .navbar,
+body.dark-mode header {
+  background: #2b2b2b;
+}
+
+body.dark-mode .footer {
+  background: #222;
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
