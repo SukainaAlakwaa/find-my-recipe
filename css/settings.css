@@ -210,19 +210,44 @@
   flex-shrink: 0;
 }
 
+
 .current-profile-info {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
-.current-profile-info p {
-  margin: 0;
-  font-size: 2.8rem;
+.current-profile-info input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 4rem;
   font-weight: 800;
   color: #111;
-  line-height: 1.05;
+  line-height: 1.2;
+  width: 100%;
+  max-width: 500px;
 }
 
+.current-profile-info input:disabled {
+  color: #111;
+  opacity: 1;
+  cursor: default;
+}
+
+.current-profile-info input::placeholder {
+  color: #111;
+  opacity: 0.6;
+}
+
+body.dark-mode .current-profile-info input {
+  color: #f5f1e8;
+}
+
+body.dark-mode .current-profile-info input::placeholder {
+  color: #f5f1e8;
+}
 
 /* PROFILE AVATAR GRID */
 .avatar-grid {
@@ -656,7 +681,7 @@ body.dark-mode .contact-card textarea {
     height: 110px;
   }
 
-  .current-profile-info p {
+  .current-profile-info input {
     font-size: 2.2rem;
   }
 

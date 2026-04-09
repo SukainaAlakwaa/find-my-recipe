@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Profile data */
   const avatars = [
-    { img: "../images/avatar-noodles.png", name: "Cozy Noodles" },
-    { img: "../images/avatar-dumplings.png", name: "Humpy Dumpling" },
-    { img: "../images/avatar-toast.png", name: "Toasty Butter" },
-    { img: "../images/avatar-sushi.png", name: "Sleepy Sushi" },
-    { img: "../images/avatar-cookie.png", name: "Cookie Monster" },
-    { img: "../images/avatar-cake.png", name: "Chocolat Cake" }
+    { img: "../images/avatar-noodles.png" },
+    { img: "../images/avatar-dumplings.png" },
+    { img: "../images/avatar-toast.png" },
+    { img: "../images/avatar-sushi.png" },
+    { img: "../images/avatar-cookie.png" },
+    { img: "../images/avatar-cake.png" }
   ];
 
   const currentProfile = document.getElementById("currentProfile");
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveBtn = document.getElementById("saveProfileBtn");
 
   let selectedAvatar = avatars[0];
+  let selectedName = "";
   let editing = false;
 
   function getRandomAvatar() {
@@ -54,14 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedAvatar = localStorage.getItem("profileAvatar");
     const savedUsername = localStorage.getItem("profileUsername");
 
-    if (!savedAvatar || !savedUsername) {
+    if (!savedAvatar) {
       selectedAvatar = getRandomAvatar();
       localStorage.setItem("profileAvatar", selectedAvatar.img);
-      localStorage.setItem("profileUsername", selectedAvatar.name);
-      return;
+    } else {
+      selectedAvatar = avatars.find(avatar => avatar.img === savedAvatar) || avatars[0];
     }
 
-    selectedAvatar = avatars.find(avatar => avatar.img === savedAvatar) || avatars[0];
+    if (!savedUsername) {
+      const randomNum = Math.floor(Math.random() * 1000);
+      selectedName = "Chef" + randomNum;
+      localStorage.setItem("profileUsername", selectedName);
+    } else {
+      selectedName = savedUsername;
+    }
   }
 
   function renderProfile() {
@@ -69,9 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     currentProfile.innerHTML = `
       <div class="current-profile-card">
-        <img src="${selectedAvatar.img}" alt="${selectedAvatar.name}">
+        <img src="${selectedAvatar.img}" alt="Selected avatar">
         <div class="current-profile-info">
-          <p>${selectedAvatar.name}</p>
+          <input
+            type="text"
+            id="profileCardNameInput"
+            value="${selectedName}"
+            placeholder="Your Name"
+            maxlength="20"
+            ${editing ? "" : "disabled"}
+          >
+          <small id="profileNameError" class="error-message"></small>
         </div>
       </div>
     `;
@@ -79,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     avatarGrid.innerHTML = avatars.map(avatar => `
       <img
         src="${avatar.img}"
-        alt="${avatar.name}"
+        alt="Avatar option"
         class="${avatar.img === selectedAvatar.img ? "selected" : ""}"
         style="opacity:${editing ? "1" : "0.65"}; pointer-events:${editing ? "auto" : "none"}"
         data-img="${avatar.img}"
@@ -104,8 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   saveBtn?.addEventListener("click", () => {
+    const input = document.getElementById("profileCardNameInput");
+    const error = document.getElementById("profileNameError");
+
+    const typedName = input.value.trim();
+
+    if (error) error.textContent = "";
+
+    if (typedName.length < 2) {
+      if (error) error.textContent = "Please enter at least 2 characters.";
+      return;
+    }
+
+    selectedName = typedName;
+
     localStorage.setItem("profileAvatar", selectedAvatar.img);
-    localStorage.setItem("profileUsername", selectedAvatar.name);
+    localStorage.setItem("profileUsername", selectedName);
+
     editing = false;
     renderProfile();
   });
@@ -155,48 +185,48 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
   });
 
-/* FAQ */
-const faqList = document.getElementById("faqList");
+  /* FAQ */
+  const faqList = document.getElementById("faqList");
 
-const faqs = [
-  ["How do I change my avatar?", "Go to Profile in Settings and choose from the preset icons."],
-  ["How do I switch dark mode?", "Go to Display and select Dark Mode."],
-  ["Do I need an account?", "No. This website does not require an account. Your data is stored locally on your device."],
-  ["Is my account completely anonymous?", "Yes. You are only identified by your chosen avatar."],
-  ["How do I contact support?", "Use the contact form in the Help & Support section."]
-];
+  const faqs = [
+    ["How do I change my avatar?", "Go to Profile in Settings and choose from the preset icons."],
+    ["How do I change my profile name?", "Go to Profile in Settings, click Edit, type your name, and save it."],
+    ["How do I switch dark mode?", "Go to Display and select Dark Mode."],
+    ["Do I need an account?", "No. This website does not require an account. Your data is stored locally on your device."],
+    ["Is my account completely anonymous?", "Yes. Your profile is stored locally using your selected avatar and name."],
+    ["How do I contact support?", "Use the contact form in the Help & Support section."]
+  ];
 
-if (faqList) {
-  faqList.innerHTML = faqs.map(([q, a]) => `
-    <div class="faq-item">
-      <button class="faq-question" type="button">
-        <span>${q}</span>
-        <span class="faq-arrow">▼</span>
-      </button>
-      <div class="faq-answer" style="display:none;">
-        <p>${a}</p>
+  if (faqList) {
+    faqList.innerHTML = faqs.map(([q, a]) => `
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>${q}</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer" style="display:none;">
+          <p>${a}</p>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
 
-  faqList.addEventListener("click", (e) => {
-    const button = e.target.closest(".faq-question");
-    if (!button) return;
+    faqList.addEventListener("click", (e) => {
+      const button = e.target.closest(".faq-question");
+      if (!button) return;
 
-    const item = button.parentElement;
-    const answer = button.nextElementSibling;
-    const isOpen = answer.style.display === "block";
+      const item = button.parentElement;
+      const answer = button.nextElementSibling;
+      const isOpen = answer.style.display === "block";
 
-    faqList.querySelectorAll(".faq-item").forEach(faq => {
-      faq.classList.remove("active");
-      faq.querySelector(".faq-answer").style.display = "none";
+      faqList.querySelectorAll(".faq-item").forEach(faq => {
+        faq.classList.remove("active");
+        faq.querySelector(".faq-answer").style.display = "none";
+      });
+
+      if (!isOpen) {
+        item.classList.add("active");
+        answer.style.display = "block";
+      }
     });
-
-    if (!isOpen) {
-      item.classList.add("active");
-      answer.style.display = "block";
-    }
-  });
-}
-
+  }
 });
