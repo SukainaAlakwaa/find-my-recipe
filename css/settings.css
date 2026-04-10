@@ -523,7 +523,7 @@ body.dark-mode .current-profile-info input::placeholder {
 /* DARK MODE LAYOUT */
 body.dark-mode {
   background: #121212;
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 /* Sidebar */
@@ -564,7 +564,7 @@ body.dark-mode .contact-form label,
 body.dark-mode .footer p,
 body.dark-mode .footer h4,
 body.dark-mode .footer-link {
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 /* CARDS / SURFACES */
@@ -589,16 +589,16 @@ body.dark-mode .theme-icon {
 }
 
 body.dark-mode .theme-icon i {
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 /* Profile name input */
 body.dark-mode .current-profile-info input {
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 body.dark-mode .current-profile-info input:disabled {
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 body.dark-mode .current-profile-info input::placeholder {
@@ -619,7 +619,7 @@ body.dark-mode .contact-card input,
 body.dark-mode .contact-card select,
 body.dark-mode .contact-card textarea {
   background: #2C2C2C;
-  color: #FFFFFF;
+  color: #D3D8DF;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -632,7 +632,7 @@ body.dark-mode .contact-form textarea::placeholder {
 body.dark-mode .profile-btn,
 body.dark-mode .support-btn {
   background: #5D7434;
-  color: #FFFFFF;
+  color: #D3D8DF;
 }
 
 body.dark-mode .save-btn {
