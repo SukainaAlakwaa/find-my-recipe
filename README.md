@@ -74,7 +74,7 @@ I used ChatGPT to support me while developing parts of the JavaScript functional
 
 ### Althea Bacon
 
-ChatGPT was mainly used to support in creation of Javascript features and logic for the FindMyRecipe. It helped me understand how to debig my code and learn from my mistakes during the development process of the website.
+ChatGPT was mainly used to support in creation of Javascript features and logic for the FindMyRecipe. It helped me understand how to debug my code and learn from my mistakes during the development process of the website.
 
 **settings.js:** Used ChatGPT to understand how to implement different themes (light & dark mode) logic through Javascript
 
