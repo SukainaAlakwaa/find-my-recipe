@@ -20,7 +20,7 @@ function setupImageUpload() {
     // if these elements don't exist, exit function
     if (!input || !preview || !label || !editBtn || !wrapper) return;
 
-    // chatgpt generated code for image preview
+    // AI generated code for image preview
     input.addEventListener("change", () => {
         const file = input.files[0];
         if (!file) return;
@@ -65,7 +65,7 @@ function setupIngredientsList() {
     const list = document.querySelector(".ingredients-list");
     if (!list) return;
 
-    // ensure at least one li exists
+    // AI generated code to imitate familiar list behavior
     list.addEventListener("focus", () => {
         if (list.children.length === 0) {
             list.appendChild(document.createElement("li"));
@@ -82,6 +82,7 @@ function setupIngredientsList() {
             }
         }
     });
+    // end of AI generated code
 }
 
 
@@ -113,7 +114,7 @@ function handleCreate() {
         id: String(Date.now()),
         title,
         image,
-
+        // AI generated code to get the rest of the form data
         category: document.querySelectorAll(".small input")[0].value.trim(),
         area: document.querySelectorAll(".small input")[1].value.trim(),
         directions: document.querySelector(".directions textarea").value.trim(),
@@ -121,8 +122,9 @@ function handleCreate() {
             .map(li => li.innerText.trim())
             .filter(text => text !== "")
             .join("\n"),
+        // end of AI generated code
 
-    isUserRecipe: true // flag to identify custom recipes
+        isUserRecipe: true // flag to identify custom recipes
     };
 
     saveRecipe(newRecipe);
@@ -189,6 +191,7 @@ function applyTheme() {
 }
 
 // FORM VALIDATION
+// similar validation logic to assignment #3
 function validateForm() {
     const title = document.querySelector(".title input");
     const category = document.querySelectorAll(".small input")[0];
