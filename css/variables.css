@@ -1,0 +1,51 @@
+/* ROOT VARIABLES */
+:root {
+  /* Base colors */
+  --bg-main: #7f9287;
+  --bg-card: #f3efe2;
+  --bg-navbar: #f3efe2;
+  --bg-button: #1f2521;
+
+  /* Text colors */
+  --text-primary: #203b22;
+  --text-secondary: #556b4f;
+  --text-light: #111;
+  --text-white: #ffffff;
+
+  /* Accent */
+  --accent-main: #3B5436;
+  --accent-highlight: #091f0a;
+
+  /* Borders + shadows */
+  --border-light: #8a8a8a;
+  --border-soft: #c8c1b2;
+  --shadow-soft: rgba(0, 0, 0, 0.15);
+
+  /* Error */
+  --error: #e74c3c;
+
+  /* Hover */
+  --hover-dark: #2b2b2b;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --bg-main: #121212;
+  --bg-card: #1F1F1F;
+  --bg-navbar: #1F1F1F;
+  --bg-button: #86AC4D;
+
+  --text-primary: #D3D8DF;
+  --text-secondary: #B6BFC9;
+  --text-light: #D3D8DF;
+
+  --accent-main: #97b389;
+  --accent-highlight: #D3D8DF;
+
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(255, 255, 255, 0.12);
+
+  --error: #ef9085;
+
+  --hover-dark: #4A5E29;
+}

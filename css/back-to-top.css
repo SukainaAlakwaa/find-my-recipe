@@ -4,9 +4,9 @@
     position: fixed;
     align-items: center;
     justify-content: center;
-    background: #4b6740;
+    background: var(--accent-main);
     opacity: 0;
-    color: #f5f1e8;
+    color: var(--text-light);
     font-size: 1.5rem;
     text-decoration: none;
     bottom: 7rem;
@@ -25,5 +25,5 @@
 }
 
 .back-to-top.active:hover {
-    background-color: #203b22;
+    background-color: var(--accent-hover);
 }
