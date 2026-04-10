@@ -122,7 +122,7 @@ label span,
 }
 
 #imageLabel span {
-  font-size: 18px;
+  font-size: 1.25rem;
   z-index: 2;
 }
 
@@ -248,7 +248,7 @@ textarea.input-field {
   background-color: var(--bg-button);
   color: var(--text-white);
   width: 20%;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 2rem;
   border-radius: 25px;
   border: none;
   font-size: 1.25rem;
@@ -260,3 +260,39 @@ textarea.input-field {
  .create-btn:hover {
   background-color: var(--hover-dark);
  } 
+
+ /* RESPONSIVE DISPLAY */
+@media (max-width: 750px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    height: auto;
+    padding: 1.25rem;
+  }
+
+  .card h1 {
+    font-size: 0.75rem;
+  }
+
+  #imageLabel i {
+  font-size: 1.5rem;
+  }
+
+  .current-profile-card {
+  height: 30%;
+  }
+
+  .create-btn {
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .image-upload {
+    height: 20rem;
+  }
+
+}
