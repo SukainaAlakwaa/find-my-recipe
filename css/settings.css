@@ -445,7 +445,7 @@ body.dark-mode .current-profile-info input::placeholder {
 }
 
 
-/* HELP / CONTACT PANEL */
+/* HELP CONTACT PANEL */
 .contact-section {
   padding: 40px;
 }
@@ -559,7 +559,7 @@ body.dark-mode .current-profile-info input::placeholder {
 }
 
 
-/* OPTIONAL CONTACT CARD */
+/* CONTACT CARD [OPTIONAL] */
 .contact-card {
   background: #95a59b;
   border-radius: 28px;
@@ -683,7 +683,7 @@ body.dark-mode .contact-form textarea::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Buttons - green accent only */
+/* Buttons */
 body.dark-mode .profile-btn,
 body.dark-mode .support-btn {
   background: #5D7434;
