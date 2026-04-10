@@ -95,6 +95,16 @@ function handleCreate() {
         id: String(Date.now()),
         title,
         image,
+
+        category: document.querySelectorAll(".small input")[0].value.trim(),
+        area: document.querySelectorAll(".small input")[1].value.trim(),
+        directions: document.querySelector(".directions textarea").value.trim(),
+        ingredients: Array.from(document.querySelectorAll(".ingredients-list li"))
+            .map(li => li.innerText.trim())
+            .filter(text => text !== "")
+            .join("\n"),
+
+    isUserRecipe: true // flag to identify custom recipes
     };
 
     saveRecipe(newRecipe);

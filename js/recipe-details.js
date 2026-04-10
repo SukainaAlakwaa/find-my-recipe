@@ -128,7 +128,7 @@ async function loadRecipeDetails() {
     localStorage.removeItem("selectedRecipe");
 
     // Custom recipe made in Add New
-    if (selectedRecipe.directions || selectedRecipe.ingredients) {
+    if (selectedRecipe.isUserRecipe) {
       renderLocalRecipe(selectedRecipe);
       return;
     }
