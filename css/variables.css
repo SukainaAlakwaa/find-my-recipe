@@ -1,16 +1,24 @@
 /* ROOT VARIABLES */
 :root {
   /* Base colors */
-  --bg-main: #7f9287;
+  --bg-main: #f3efe2;
+  --bg-create: #7f9287;
   --bg-card: #f3efe2;
   --bg-navbar: #f3efe2;
-  --bg-button: #1f2521;
+  --bg-button: #111;
+  --bg-green-button: #556b4f;
+  --bg-search-placeholder: #d8d8c8;
+  --bg-suggestion-hover: #e8e2d3;
+  --bg-green-button-hover: #4b6740;
 
   /* Text colors */
   --text-primary: #203b22;
   --text-secondary: #556b4f;
   --text-light: #111;
+  --text-cream: #f3efe2;
   --text-white: #ffffff;
+  --text-black: #000000;
+  --text-hero: #556b4f;
 
   /* Accent */
   --accent-main: #3B5436;
@@ -31,16 +39,23 @@
 /* DARK MODE */
 body.dark-mode {
   --bg-main: #121212;
+  --bg-create: #121212;
   --bg-card: #1F1F1F;
   --bg-navbar: #1F1F1F;
   --bg-button: #86AC4D;
+  --bg-green-button: #556b4f; 
+  --bg-search-placeholder: #121212;
+  --bg-suggestion-hover: #2c2c2c;
+  --bg-green-button-hover: #4b6740;
 
-  --text-primary: #D3D8DF;
-  --text-secondary: #B6BFC9;
-  --text-light: #D3D8DF;
+  --text-primary: #B6BFC9;
+  --text-secondary: #aeb2b9;
+  --text-light: #fff;
+  --text-hero: #203b22;
 
-  --accent-main: #97b389;
+  --accent-main: #7f8d67;
   --accent-highlight: #D3D8DF;
+  --shadow-soft: rgba(232, 219, 219, 0.732);
 
   --border-light: rgba(255, 255, 255, 0.12);
   --border-soft: rgba(255, 255, 255, 0.12);

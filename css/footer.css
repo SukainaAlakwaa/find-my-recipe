@@ -1,0 +1,40 @@
+body {
+  font-family: 'Glacial Indifference', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-light);
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 60px 40px;
+  background-color: var(--bg-main);
+  flex-wrap: wrap;
+}
+
+.footer-right-group {
+  display: flex;
+  gap: 60px;
+}
+
+.footer h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #5d7c4f;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  font-size: 2rem;
+}
