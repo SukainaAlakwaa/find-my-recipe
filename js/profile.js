@@ -22,15 +22,6 @@ function ensureProfileData() {
     "../images/avatar-cake.png"
   ];
 
-  const names = [
-    "Cozy Noodles",
-    "Humpy Dumpling",
-    "Toasty Butter",
-    "Sleepy Sushi",
-    "Cookie Monster",
-    "Chocolat Cake"
-  ];
-
   if (!localStorage.getItem("profileAvatar")) {
     const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
     localStorage.setItem("profileAvatar", randomAvatar);
