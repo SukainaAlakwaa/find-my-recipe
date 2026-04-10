@@ -28,8 +28,7 @@ function ensureProfileData() {
   }
 
   if (!localStorage.getItem("profileUsername")) {
-    const randomName = names[Math.floor(Math.random() * names.length)];
-    localStorage.setItem("profileUsername", randomName);
+    localStorage.setItem("profileUsername", "Chef" + (Math.floor(Math.random() * 900) + 100));
   }
 }
 
