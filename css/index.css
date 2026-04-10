@@ -43,14 +43,14 @@ body {
   font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--text-hero);
   margin-bottom: 20px;
-  text-shadow: var(--shadow-soft) 0px 0px 20px;
+  text-shadow: var(--text-white) 0px 0px 10px;
 }
 
 .hero-overlay p {
   font-size: clamp(1rem, 2vw, 1.4rem);
   margin-bottom: 10px;
   color: var(--text-black);
-  text-shadow: var(--shadow-soft) 0px 0px 20px;
+  text-shadow: var(--text-white) 0px 0px 10px;
 }
 
 .hero-btn {
