@@ -43,35 +43,40 @@
                 </div>
 
                 <!-- RECIPE TITLE -->
-                <div class="card title">
+                <div class="card title input-control">
                     <h1>Title</h1>
-                    <div class="placeholder" contenteditable="true" data-placeholder="Add recipe title"></div>
+                    <input type="text" class="input-field" maxlength="50" placeholder="Add recipe title">
+                    <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE CATEGORY -->
-                <div class="card small">
+                <div class="card small input-control">
                     <h1>Category</h1>
-                    <div class="placeholder" contenteditable="true" data-placeholder="Ex: Chicken, Beef"></div>
+                    <input type="text" class="input-field" maxlength="20" placeholder="Ex: Chicken, Beef">
+                    <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE AREA -->
-                <div class="card small">
+                <div class="card small input-control">
                     <h1>Area</h1>
-                    <div class="placeholder" contenteditable="true" data-placeholder="Ex: Italian, Mexican"></div>
+                    <input type="text" class="input-field" maxlength="20" placeholder="Ex: Italian, Mexican">
+                    <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE INGREDIENTS -->
-                <div class="card ingredients">
+                <div class="card ingredients input-control">
                     <h1>Ingredients</h1>
                     <ul class="ingredients-list" contenteditable="true">
                         <li></li>
                     </ul>
+                    <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE DIRECTION -->
-                <div class="card directions">
+                <div class="card directions input-control">
                     <h1>Directions</h1>
-                    <div class="placeholder" contenteditable="true" data-placeholder="Add directions"></div>
+                    <textarea class="input-field" placeholder="Add directions"></textarea>
+                    <div class="error-message"></div>
                 </div>
 
                 <!-- CREATE RECIPE -->

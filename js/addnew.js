@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setupImageUpload();
     setupIngredientsList();
     setupCreateButton();
-    setupValidation();
 });
 
 
@@ -73,47 +72,29 @@ function setupCreateButton() {
     const createBtn = document.querySelector(".create-btn");
     if (!createBtn) return;
 
-    createBtn.addEventListener("click", handleCreate);
+    createBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        handleCreate(); 
+    });
 }
 
-// connects to the profile page, title/image works but nothing else bc recipe loading is currently only API-based
+// connects to the profile page
 function handleCreate() {
-    const title = document.querySelector(".title .placeholder")?.innerText.trim();
-    // const category = document.querySelectorAll(".small .placeholder")[0]?.innerText.trim();
-    // const area = document.querySelectorAll(".small .placeholder")[1]?.innerText.trim();
-    // const directions = document.querySelector(".directions .placeholder")?.innerText.trim();
-    // const ingredients = Array.from(document.querySelectorAll(".ingredients-list li"))
-    //     .map(li => li.innerText.trim()) 
-    //     .filter(text => text !== ""); 
+
+    const isValid = validateForm();
+    if (!isValid) return;
+
+    const title = document.querySelector(".title input").value.trim();
 
     const preview = document.getElementById("preview");
     const image = (preview && preview.src && preview.style.display === "block")
         ? preview.src
         : "../images/recipe-default.png";
 
-    if (!title) {
-    alert("Please add a title!");
-    return;
-    }
-
-    if (title.length > 50) {
-        alert("Title must be under 50 characters!");
-        return;
-    }
-
-    if (category.length > 20 || area.length > 20) {
-    alert("Category and Area must be under 20 characters!");
-    return;
-    }
-
     const newRecipe = {
         id: String(Date.now()),
         title,
         image,
-        // category,
-        // area,
-        // ingredients,
-        // directions
     };
 
     saveRecipe(newRecipe);
@@ -180,24 +161,79 @@ function applyTheme() {
 }
 
 // FORM VALIDATION
-function setupValidation() {
-    const title = document.querySelector(".title .placeholder");
-    const smallFields = document.querySelectorAll(".small .placeholder");
+function validateForm() {
+    const title = document.querySelector(".title input");
+    const category = document.querySelectorAll(".small input")[0];
+    const area = document.querySelectorAll(".small input")[1];
+    const directions = document.querySelector(".directions textarea");
+    const ingredients = document.querySelector(".ingredients-list");
 
-    if (title) {
-        limitText(title, 50);
+    let isValid = true;
+
+    const setError = (element, message) => {
+        const parent = element.closest(".input-control");
+        const errorDisplay = parent.querySelector(".error-message");
+
+        errorDisplay.innerText = message;
+        parent.classList.add("error");
+        parent.classList.remove("success");
+    };
+
+    const setSuccess = (element) => {
+        const parent = element.closest(".input-control");
+        const errorDisplay = parent.querySelector(".error-message");
+
+        errorDisplay.innerText = "";
+        parent.classList.remove("error");
+        parent.classList.add("success");
+    };
+
+    // TITLE
+    if (title.value.trim() === "") {
+        setError(title, "Title is required");
+        isValid = false;
+    } else if (title.value.length > 50) {
+        setError(title, "Max 50 characters");
+        isValid = false;
+    } else {
+        setSuccess(title);
     }
 
-    smallFields.forEach(field => {
-        limitText(field, 20);
-    });
-}
+    // CATEGORY
+    if (category.value.length > 20) {
+        setError(category, "Max 20 characters");
+        isValid = false;
+    } else {
+        setSuccess(category);
+    }
 
-// reusable max length function for contenteditable elements, used in title and small fields (category/area)
-function limitText(element, maxLength) {
-    element.addEventListener("input", () => {
-        if (element.innerText.length > maxLength) {
-            element.innerText = element.innerText.substring(0, maxLength);
-        }
-    });
+    // AREA
+    if (area.value.length > 20) {
+        setError(area, "Max 20 characters");
+        isValid = false;
+    } else {
+        setSuccess(area);
+    }
+
+    // INGREDIENTS
+    const ingredientItems = Array.from(ingredients.querySelectorAll("li"))
+        .map(li => li.innerText.trim())
+        .filter(text => text !== "");
+
+    if (ingredientItems.length === 0) {
+        setError(ingredients, "Add at least one ingredient");
+        isValid = false;
+    } else {
+        setSuccess(ingredients);
+    }
+
+    // DIRECTIONS
+    if (directions.value.trim() === "") {
+        setError(directions, "Directions are required");
+        isValid = false;
+    } else {
+        setSuccess(directions);
+    }
+
+    return isValid;
 }
