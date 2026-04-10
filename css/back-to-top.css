@@ -30,6 +30,7 @@
 
 @media (max-width: 820px) {
     .back-to-top {
+        display: none;
         font-size: 1rem;
         bottom: 3rem;
         right: 2rem;
