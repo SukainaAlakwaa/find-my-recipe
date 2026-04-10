@@ -262,7 +262,7 @@ textarea.input-field {
  } 
 
  /* RESPONSIVE DISPLAY */
-@media (max-width: 750px) {
+@media (max-width: 820px) {
   .grid {
     display: flex;
     flex-direction: column;
@@ -270,20 +270,28 @@ textarea.input-field {
 
   .card {
     height: auto;
-    padding: 1.25rem;
+    padding: 0.5rem 1rem 1rem;
   }
 
   .card h1 {
     font-size: 0.75rem;
   }
 
+  .input-field {
+    font-size: max(1.5vh, 14px);
+  }
+
   #imageLabel i {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .current-profile-card {
-  height: 30%;
+    height: 30%;
   }
+
+  .current-profile-info p {
+    font-size: max(2.25vh, 18px);
+}
 
   .create-btn {
     padding: 0.75rem;
@@ -292,6 +300,7 @@ textarea.input-field {
   }
 
   .image-upload {
+    padding: 0;
     height: 20rem;
   }
 

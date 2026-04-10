@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add New Recipe</title>
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/nav.css">
@@ -39,7 +40,7 @@
                     </label>
 
                     <div class="image-preview-wrapper">
-                        <img id="preview" />
+                        <img id="preview" name="previewImage" />
                         <button class="edit-btn"><i class="fa-solid fa-pencil"></i></button>
                     </div>
                 </div>
@@ -47,28 +48,28 @@
                 <!-- RECIPE TITLE -->
                 <div class="card title input-control">
                     <h1>Title</h1>
-                    <input type="text" class="input-field" maxlength="50" placeholder="Add recipe title">
+                    <input type="text" id="titleInput" name="title" class="input-field" placeholder="Add recipe title">
                     <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE CATEGORY -->
                 <div class="card small input-control">
                     <h1>Category</h1>
-                    <input type="text" class="input-field" maxlength="20" placeholder="Ex: Chicken, Beef">
+                    <input type="text" id="categoryInput" name="category" class="input-field" placeholder="Ex: Chicken, Beef">
                     <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE AREA -->
                 <div class="card small input-control">
                     <h1>Area</h1>
-                    <input type="text" class="input-field" maxlength="20" placeholder="Ex: Italian, Mexican">
+                    <input type="text" id="areaInput" name="area" class="input-field" placeholder="Ex: Italian, Mexican">
                     <div class="error-message"></div>
                 </div>
 
                 <!-- RECIPE INGREDIENTS -->
                 <div class="card ingredients input-control">
                     <h1>Ingredients</h1>
-                    <ul class="ingredients-list" contenteditable="true">
+                    <ul id="ingredientsInput" name="ingredients" class="ingredients-list" contenteditable="true">
                         <li></li>
                     </ul>
                     <div class="error-message"></div>
@@ -77,7 +78,7 @@
                 <!-- RECIPE DIRECTION -->
                 <div class="card directions input-control">
                     <h1>Directions</h1>
-                    <textarea class="input-field" placeholder="Add directions"></textarea>
+                    <textarea id="directionsInput" name="directions" class="input-field" placeholder="Add directions"></textarea>
                     <div class="error-message"></div>
                 </div>
 

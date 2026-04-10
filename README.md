@@ -25,11 +25,20 @@
 - Handled default profile setup
 - Designed and coded dynamic profile updates
 
-**Julia Khanyukova**
--
-
-
-
+**Julia Khanyukova - 101383775**
+- Designed website logo
+- Helped in creation of the mockup design
+- Wrote the Problem Statement section of the design document
+- Designed and developed addnew.html
+- Ensured compatibility between addnew.js and recipe-details.js so that recipes can be properly viewed in profile.html
+- Added isUserRecipe flag to ensure that the recipe loading in recipe.html works smoothly without defaulting the to api recipe loading
+- Made sure that custom recipe images can be stored locally without worries of them disappearing due to being stored in temporary file refs
+- Implemented form validation similar to that in assignment #3 to ensure that users don't enter empty recipes
+- Implemented nav.css & footer.css into every page + cleaned every css file to avoid overwriting global styling
+- Created variables.css to store all root variable colors
+- Implemented root variables in every css file
+- Ensured responsive design of addnew.html on numerous different screen sizes
+- Created and implemented back to top button into every page that had a necessity for it
 
 
 ## DESCRIPTION OF THE SITE
@@ -81,3 +90,20 @@ ChatGPT was mainly used to support in creation of Javascript features and logic 
 **profile.js:** Used ChatGPT how to display the api recipe information in saved recipes within collections using Javascript
 
 **settings.css:** Used ChatGPT to help structure and organize the code.
+
+
+### Julia Khanyukova
+
+I used ChatGPT to aid me in deciding correct JavaScript implementation and to help me with debugging, writing difficult functions, understanding concepts, and improving the overall structure of my code. It mainly helped me with debugging, working through JS logic I was writing and understanding code. Overall, ChatGPT was used as a guide for problem-solving and debugging to better understand the concepts used in my code. All final implementations were adjusted and integrated by me to fit the needs of the project.
+
+**variables.js:** Used ChatGPT to help me convert all of the colors used in addnew.css to their own root variables
+
+**addnew.js** Used ChatGPT to:
+- Help with the image upload functionality, thus fixing a bug that would cause the images to disappear since I previously was using temporary files
+- Create a condition checking for correct image size so that localStorage can handle it
+- Ensuring user-friendly Google Docs-esque list behavior in the ingredients input
+- Help with getting and formatting category, area, directions & ingredients info in handleeCreate()
+
+**general debugging** Used ChatGPT in helping me debug file path errors such as incorrect linking of the nav.css and footer.css in index.html (used ../css/nav.css as a file path when it should have been css/nav.css because index.html is not in the pages/ folder like the other pages of the site)
+
+**addnew.css** Used ChatGPT to help debug styling issues such as responsive design not properly showing up on smaller devices

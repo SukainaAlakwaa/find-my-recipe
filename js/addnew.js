@@ -62,7 +62,7 @@ function setupImageUpload() {
 
 // INGREDIENT LIST
 function setupIngredientsList() {
-    const list = document.querySelector(".ingredients-list");
+    const list = document.getElementById("ingredientsInput");
     if (!list) return;
 
     // AI generated code to imitate familiar list behavior
@@ -100,10 +100,17 @@ function setupCreateButton() {
 // connects to the profile page
 function handleCreate() {
 
-    const isValid = validateForm();
-    if (!isValid) return;
+    const title = document.getElementById("titleInput").value.trim();
+    const category = document.getElementById("categoryInput").value.trim();
+    const area = document.getElementById("areaInput").value.trim();
+    const directions = document.getElementById("directionsInput").value.trim();
 
-    const title = document.querySelector(".title input").value.trim();
+    // AI generated code to get ingredients from the list
+    const ingredients = Array.from(document.querySelectorAll("#ingredientsInput li"))
+        .map(li => li.innerText.trim())
+        .filter(text => text !== "")
+        .join("\n");
+    // end of AI generated code
 
     const preview = document.getElementById("preview");
     const image = (preview && preview.dataset.imageData)
@@ -114,17 +121,11 @@ function handleCreate() {
         id: String(Date.now()),
         title,
         image,
-        // AI generated code to get the rest of the form data
-        category: document.querySelectorAll(".small input")[0].value.trim(),
-        area: document.querySelectorAll(".small input")[1].value.trim(),
-        directions: document.querySelector(".directions textarea").value.trim(),
-        ingredients: Array.from(document.querySelectorAll(".ingredients-list li"))
-            .map(li => li.innerText.trim())
-            .filter(text => text !== "")
-            .join("\n"),
-        // end of AI generated code
-
-        isUserRecipe: true // flag to identify custom recipes
+        category,
+        area,
+        directions,
+        ingredients,
+        isUserRecipe: true
     };
 
     saveRecipe(newRecipe);
@@ -193,11 +194,11 @@ function applyTheme() {
 // FORM VALIDATION
 // similar validation logic to assignment #3
 function validateForm() {
-    const title = document.querySelector(".title input");
-    const category = document.querySelectorAll(".small input")[0];
-    const area = document.querySelectorAll(".small input")[1];
-    const directions = document.querySelector(".directions textarea");
-    const ingredients = document.querySelector(".ingredients-list");
+    const title = document.getElementById("titleInput");
+    const category = document.getElementById("categoryInput");
+    const area = document.getElementById("areaInput");
+    const directions = document.getElementById("directionsInput");
+    const ingredients = document.getElementById("ingredientsInput");
 
     let isValid = true;
 
