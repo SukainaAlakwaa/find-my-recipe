@@ -7,6 +7,8 @@ body {
   margin: 0;
   background-color: var(--bg-create);
   min-height: 100vh;
+  min-width: 320px;
+  overflow-x: auto;
 }
 
 /* BRAND FONT */
@@ -283,6 +285,9 @@ textarea.input-field {
 
   #imageLabel i {
     font-size: 1.5rem;
+  }
+  #imageLabel span {
+    font-size: 1rem;
   }
 
   .current-profile-card {
