@@ -7,6 +7,7 @@ body {
 /* FOOTER */
 .footer {
   border-top: 1px solid var(--border-soft);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   padding: 30px 60px 40px;

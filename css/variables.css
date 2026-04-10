@@ -38,8 +38,8 @@
 
 /* DARK MODE */
 body.dark-mode {
-  --bg-main: #121212;
-  --bg-create: #121212;
+  --bg-main: #272727;
+  --bg-create: #0a0a0a;
   --bg-card: #1F1F1F;
   --bg-navbar: #1F1F1F;
   --bg-button: #86AC4D;
