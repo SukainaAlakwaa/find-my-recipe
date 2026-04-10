@@ -4,17 +4,11 @@
 ## TEAM MEMBERS & CONTRIBUTIONS
 
 **Sukaina Al-akwaa — 101347833**
-<<<<<<< HEAD
-- Helped in creation of the mockup design
-- Developed the homepage (index.html) and the recipe details page (recipe.html)
-- Integrated TheMealDB recipe API for fetching and displaying recipes
-=======
 - Created the GitHub repository and set up the initial project structure
 - Created and developed search-results.html and api.js
 - Developed the homepage (index.html) and the recipe details page (recipe.html)
 - Helped in creation of the mockup design
 - Integrated TheMealDB recipe API (api.js) for fetching and displaying recipes
->>>>>>> 46fb240 (updated readme)
 - Implemented search and live search suggestions with auto-complete
 - Built save functionality using localStorage
 - Built the shared navigation bar (header) and footer as reusable partials with a partial include system to load them across all pages
