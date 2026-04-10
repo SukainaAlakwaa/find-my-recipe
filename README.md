@@ -18,14 +18,20 @@
 **Althea Bacon — 101391470**
 - Provided the website idea and name
 - Helped in creation of the mockup design
-- Created presentation slides
+- Created the presentation slides
 - Wrote the Target Users section of the design document
 - Developed the profile page (profile.html) and setting page (settings.html)
 - Implemented dark mode toggle logic
+- Integrated dark mode styles across all CSS files
 - Implemented saved recipes, collections, and favorites using localStorage
+- Enabled users to view full recipe information from saved recipes, collections, and davorites
+- Added buttons that allow users to edit saved recipes under each recipe title (trash can, heart, and add-to-collection icons)
 - Ensured compatibility and state synchronization between profile, settings, and create new pages
 - Handled default profile setup
-- Designed and coded dynamic profile updates
+- Designed and implemented dynamic profile updates, allowing users to choose a profile icon and edit their nickname
+- Added an FAQ section with expandable and collapsible questions when clicked
+- Implemented form validation with character limits and a success message upon submission
+- Ensured responsive design for profile.html and settings.html across different screen sizes
 
 **Julia Khanyukova - 101383775**
 - Designed website logo
