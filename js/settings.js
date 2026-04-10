@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeProfileData();
   renderProfile();
 
+  // AI-assisted: Used ChatGPT to understand how to implement dark mode toggle logic and save the user's theme through the pages
   /* Display theme */
   const themeCards = document.querySelectorAll(".theme-card");
 
