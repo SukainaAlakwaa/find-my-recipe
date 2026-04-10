@@ -298,6 +298,7 @@ function openSavedRecipeDetails(recipeId) {
   openRecipeDetails(recipe);
 }
 
+// AI-assisted: Used ChatGPT to understand to make the api recipe information display within the collections
 /* Open collection recipe details */
 function openCollectionRecipeDetails(collectionId, recipeId) {
   const collections = getCollections();
