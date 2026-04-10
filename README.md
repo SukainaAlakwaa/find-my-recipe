@@ -4,6 +4,7 @@
 ## TEAM MEMBERS & CONTRIBUTIONS
 
 **Sukaina Al-akwaa — 101347833**
+- Helped in creation of the mockup design
 - Developed the homepage (index.html) and the recipe details page (recipe.html)
 - Integrated TheMealDB recipe API for fetching and displaying recipes
 - Implemented search and live search suggestions with auto-complete
@@ -12,6 +13,7 @@
 - Created the partial include system to load header/footer across all pages
 - Implemented the responsive hamburger menu for mobile
 - Wrote the Visual Direction and Site Organization sections of the project document
+- Developed the recipe results display (recipe cards) with responsive grid layout
 
 **Althea Bacon — 101391470**
 - Provided the website idea and name
