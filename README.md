@@ -20,7 +20,7 @@
 - Wrote the Target Users section of the design document
 - Developed the profile page (profile.html) and setting page (settings.html)
 - Implemented dark mode toggle logic
-- Impelemented saved recipes, collections, and favorites using localStorage
+- Implemented saved recipes, collections, and favorites using localStorage
 - Ensured compatibility and state synchronization between profile, settings, and create new pages
 - Handled default profile setup
 - Designed and coded dynamic profile updates
