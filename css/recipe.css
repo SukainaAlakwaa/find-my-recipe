@@ -5,82 +5,12 @@
 }
 
 body {
-  background-color: #f3efe2;
-  color: #1f1f1f;
-  font-family: Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  font-family: 'Glacial Indifference', sans-serif;
 }
 
-/* ================= DARK MODE ================= */
-body.dark-mode {
-  background: #121212;
-  color: #D3D8DF;
-}
-
-/* Navbar */
-body.dark-mode .navbar,
-body.dark-mode .site-header,
-body.dark-mode header {
-  background: #1F1F1F;
-  color: #D3D8DF;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Footer */
-body.dark-mode .footer,
-body.dark-mode footer {
-  background: #1F1F1F;
-  color: #D3D8DF;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Links */
-body.dark-mode .navbar a,
-body.dark-mode .footer a {
-  color: #D3D8DF;
-}
-
-/* Logo + icons */
-body.dark-mode .logo {
-  color: #D3D8DF;
-}
-
-body.dark-mode .highlight {
-  color: #AFC48A;
-}
-
-/* Page wrapper */
-body.dark-mode .recipe-details-page {
-  color: #D3D8DF;
-}
-
-/* Back link */
-body.dark-mode .back-link {
-  color: #AFC48A;
-}
-
-/* Recipe card */
-body.dark-mode .recipe-details {
-  background-color: #1F1F1F;
-  color: #D3D8DF;
-}
-
-/* Headings */
-body.dark-mode .recipe-details h1 {
-  color: #D3D8DF;
-}
-
-body.dark-mode .recipe-details h2 {
-  color: #D3D8DF;
-}
-
-/* Text */
-body.dark-mode .recipe-details p,
-body.dark-mode .recipe-details li,
-body.dark-mode .instructions {
-  color: #B6BFC9;
-}
-
-/* Optional: image tone*/
+/* Image tone*/
 body.dark-mode .detail-image {
   filter: brightness(0.9);
 }
@@ -100,12 +30,12 @@ h1, h2 {
   display: inline-block;
   margin-bottom: 20px;
   text-decoration: none;
-  color: #5d7c4f;
+  color: var(--text-secondary);
   font-weight: bold;
 }
 
 .recipe-details {
-  background-color: #ffffff;
+  background-color: var(--text-white);
   border-radius: 24px;
   padding: 30px;
 }
@@ -121,7 +51,7 @@ h1, h2 {
 .recipe-details h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #5d7c4f;
+  color: var(--text-secondary);
 }
 
 .recipe-details p {
@@ -146,30 +76,4 @@ h1, h2 {
 
 .instructions {
   line-height: 1.7;
-}
-
-/* RECIPE PAGE DARK MODE */
-
-body.dark-mode .recipe-details-page {
-  color: #f5f1e8;
-}
-
-body.dark-mode .back-link {
-  color: #a8c3a0;
-}
-
-body.dark-mode .recipe-details {
-  background-color: #2a302b;
-  color: #f5f1e8;
-}
-
-body.dark-mode .recipe-details h1,
-body.dark-mode .recipe-details h2,
-body.dark-mode .recipe-details p,
-body.dark-mode .recipe-details li {
-  color: #f5f1e8;
-}
-
-body.dark-mode .instructions {
-  color: #f5f1e8;
 }

@@ -29,8 +29,8 @@
   --border-soft: #c8c1b2;
   --shadow-soft: rgba(0, 0, 0, 0.15);
 
-  /* Error */
-  --error: #e74c3c;
+  /* Error/Heart */
+  --red: #e74c3c;
 
   /* Hover */
   --hover-dark: #2b2b2b;
@@ -51,6 +51,7 @@ body.dark-mode {
   --text-primary: #B6BFC9;
   --text-secondary: #aeb2b9;
   --text-light: #fff;
+  --text-white: #000;
   --text-hero: #203b22;
 
   --accent-main: #7f8d67;

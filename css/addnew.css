@@ -223,12 +223,12 @@ textarea.input-field {
 /* ERRORS */
 .input-control.error .input-field,
 .input-control.error textarea {
-  border-bottom: 2px solid var(--error);
+  border-bottom: 2px solid var(--red);
 }
 
 .error-message {
   font-size: 0.6rem;
-  color: var(--error);
+  color: var(--red);
   display: none;
 }
 

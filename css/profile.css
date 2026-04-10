@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Glacial Indifference', sans-serif;
   background: #f4eedf;
   color: #1f1f1f;
 }
@@ -281,7 +281,7 @@ body.dark-mode .menu-toggle {
 }
 
 /* Logo Link */
-.logo {
+/* .logo {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 800;
@@ -291,30 +291,32 @@ body.dark-mode .menu-toggle {
 .logo .highlight {
   color: #8aa399;
   font-weight: 800;
-}
+} */
 
 /* Keep same color on all states */
-.logo:visited,
+/* .logo:visited,
 .logo:hover,
 .logo:active {
   color: #4f6f52;
   text-decoration: none;
-}
+} */
 
 /* Profile header */
 .profile-header {
-  background: #9cab9f;
+  background: var(--bg-create);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 40px;
-  border-bottom: 1.5px solid #4b4b4b;
+  border-bottom: 1.5px solid var(--border-light);
   gap: 28px;
   width: 100%;
   margin: 0 auto;
 }
 
-.profile-left { flex-shrink: 0; }
+.profile-left { 
+  flex-shrink: 0; 
+}
 
 .profile-pic {
   width: 120px;
@@ -341,12 +343,12 @@ body.dark-mode .menu-toggle {
 .username-row h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: #13251c;
+  color: var(--text-primary);
 }
 
 .settings-btn {
   text-decoration: none;
-  color: #13251c;
+  color: var(--text-primary);
   display: flex;
 }
 
@@ -363,13 +365,13 @@ body.dark-mode .menu-toggle {
 
 .profile-tabs a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-light);
   font-size: 1rem;
   font-weight: 700;
 }
 
 .profile-tabs a.active {
-  border-bottom: 2px solid #13251c;
+  border-bottom: 2px solid var(--text-light);
 }
 
 /* Recipe actions */
@@ -385,7 +387,8 @@ body.dark-mode .menu-toggle {
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: #4f6f52;
+  color: var(--accent-main);
+  transition: 0.25s ease;
 }
 
 /* Hover */
@@ -395,12 +398,12 @@ body.dark-mode .menu-toggle {
 
 /* Heart color */
 .icon-btn .fa-heart {
-  color: #c94b4b;
+  color: var(--red);
 }
 
-/* Trash hover (optional) */
+/* Trash hover */
 .icon-btn .fa-trash:hover {
-  color: #b84a4a;
+  color: var(--red);
 }
 
 /* Recipe title */
@@ -421,13 +424,18 @@ body.dark-mode .menu-toggle {
 .profile-right { flex-shrink: 0; }
 
 .create-btn {
-  background: #5d7434;
-  color: white;
+  background: var(--bg-green-button);
+  color: var(--text-white);
   font-size: 1.5rem;
   font-weight: 700;
   padding: 16px 28px;
   border-radius: 18px;
   text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.create-btn:hover {
+  background: var(--bg-green-button-hover);
 }
 
 /* Main content */
@@ -444,7 +452,7 @@ body.dark-mode .menu-toggle {
 
 .content-top h2 {
   font-size: 2rem;
-  color: #575757;
+  color: var(--text-secondary);
   font-weight: 800;
 }
 
@@ -460,26 +468,34 @@ body.dark-mode .menu-toggle {
 }
 
 .collection-form input {
+  font: inherit;
   padding: 12px 14px;
   min-width: 260px;
   border-radius: 10px;
-  border: 1px solid #9f9f9f;
+  border: 1px solid var(--border-light);
 }
 
 .collection-form button {
-  background: #5d7434;
-  color: #fff;
+  font: inherit;
+  background: var(--bg-green-button);
+  color: var(--text-white);
   padding: 12px 18px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
   cursor: pointer;
+  transition: 0.25s ease;
 }
+
+.collection-form button:hover {
+  background: var(--bg-green-button-hover);
+}
+
 /* Collection popup */
 .collection-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--shadow-soft);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -488,7 +504,7 @@ body.dark-mode .menu-toggle {
 
 /* Collection popup box */
 .collection-popup-box {
-  background: #f7f3ea;
+  background: var(--bg-main);
   border-radius: 24px;
   padding: 24px;
   width: min(90%, 380px);
@@ -506,16 +522,16 @@ body.dark-mode .menu-toggle {
   text-align: left;
   padding: 12px 14px;
   margin-bottom: 10px;
-  border: 1px solid #d7cdbd;
+  border: 1px solid var(--border-soft);
   border-radius: 12px;
-  background: white;
+  background: var(--bg-navbar);
   cursor: pointer;
   font-family: 'Glacial Indifference', sans-serif;
   font-size: 1rem;
 }
 
 .collection-option-btn:hover {
-  background: #efe8d8;
+  background: var(--bg-suggestion-hover);
 }
 
 /* Close popup button */
@@ -525,8 +541,8 @@ body.dark-mode .menu-toggle {
   padding: 12px;
   border: none;
   border-radius: 12px;
-  background: #5d7c4f;
-  color: white;
+  background: var(--bg-green-button);
+  color: var(--text-white);
   font-family: 'Glacial Indifference', sans-serif;
   font-weight: 700;
   cursor: pointer;
@@ -534,8 +550,8 @@ body.dark-mode .menu-toggle {
 
 /* COLLECTION EDITOR */
 .collection-editor {
-  background: #f7f3ea;
-  border: 1.5px solid #cfc3af;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-soft);
   border-radius: 28px;
   padding: 28px 30px;
   margin-bottom: 30px;
@@ -546,15 +562,15 @@ body.dark-mode .menu-toggle {
   margin: 0 0 18px;
   font-size: 2rem;
   font-weight: 700;
-  color: #16233b;
+  color: var(--text-light);
 }
 
 .collection-editor input {
   width: 100%;
   padding: 18px 20px;
-  border: 1.5px solid #bdb4a5;
+  border: 1.5px solid var(--border-soft);
   border-radius: 18px;
-  background: #efefef;
+  background: var(--bg-suggestion-hover);
   font-size: 1.1rem;
   font-family: 'Glacial Indifference', sans-serif;
   margin-bottom: 18px;
@@ -562,8 +578,8 @@ body.dark-mode .menu-toggle {
 
 .collection-editor input:focus {
   outline: none;
-  border-color: #8ba094;
-  background: #ffffff;
+  border-color: var(--border-light);
+  background: var(--text-white);
 }
 
 /* EDITOR BUTTONS */
@@ -581,41 +597,48 @@ body.dark-mode .menu-toggle {
   font-weight: 700;
   font-family: 'Glacial Indifference', sans-serif;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
 }
 
 /* Save button */
 #saveCollectionEditBtn {
-  background: #5d7c4f;
-  color: white;
+  background: var(--bg-green-button);
+  color: var(--text-white);
+  transition:0.25s ease;
 }
 
 #saveCollectionEditBtn:hover {
-  background: #4f6b43;
+  background: var(--bg-green-button-hover);
 }
 
 /* Delete button */
 #deleteCollectionBtn {
-  background: #e6ddd0;
-  color: #5c4033;
+  background: var(--bg-green-button);
+  color: var(--text-white);
+  transition:0.25s ease;
 }
+
+#deleteCollectionBtn:hover {
+  background: var(--bg-green-button-hover);
+}
+
 
 /* Heart icon */
 .fa-heart {
-  color: #d85a5a;
+  color: var(--red);
 }
 
 /* Bookmark */
 .fa-bookmark {
-  color: #5d7c4f;
+  color: var(--bg-green-button);
 }
 
-#deleteCollectionBtn:hover {
-  background: #d8ccbb;
-}
+/* #deleteCollectionBtn:hover {
+  background: var(--text-cream);
+} */
 
 /* Icon buttons */
-.icon-btn {
+/* .icon-btn {
   background: none;
   border: none;
   padding: 0;
@@ -628,11 +651,11 @@ body.dark-mode .menu-toggle {
 .icon-btn:hover {
   transform: scale(1.15);
   color: #5d7c4f;
-}
+} */
 
 /* RECIPES INSIDE EDITOR */
 #collectionRecipesList {
-  border-top: 1px solid #d6cbbb;
+  border-top: 1px solid var(--bg-search-placeholder);
   padding-top: 10px;
 }
 
@@ -641,19 +664,19 @@ body.dark-mode .menu-toggle {
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid #e5dccd;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .collection-recipe-item span {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #111;
+  color: var(--text-light);
 }
 
 .collection-recipe-item button {
   border: none;
-  background: #d9b8a0;
-  color: #3d2b1f;
+  background: var(--bg-suggestion-hover);
+  color: var(--text-light);
   border-radius: 10px;
   padding: 10px 18px;
   font-size: 0.95rem;
@@ -664,7 +687,7 @@ body.dark-mode .menu-toggle {
 }
 
 .collection-recipe-item button:hover {
-  background: #cfa487;
+  background: var(--bg-suggestion-hover);
 }
 
 /* Recipe click */
@@ -679,31 +702,31 @@ body.dark-mode .menu-toggle {
 
 /* COLLECTION CARDS */
 .collection-card {
-  background: #f7f3ea;
-  border: 1.5px solid #cfc3af;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-soft);
   border-radius: 28px;
   padding: 26px 30px;
   cursor: pointer;
   transition: 0.2s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 14px var(--shadow-soft);
 }
 
 .collection-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 18px var(--shadow-soft);
 }
 
 .collection-card h3 {
   margin: 0 0 6px;
   font-size: 1.9rem;
   font-weight: 700;
-  color: #16233b;
+  color: var(--text-light);
 }
 
 .collection-card p {
   margin: 0;
   font-size: 1.15rem;
-  color: #222;
+  color: var(--text-light);
 }
 
 /* Collection recipes list */
@@ -716,11 +739,11 @@ body.dark-mode .menu-toggle {
 
 /* Collection recipe card */
 .collection-recipe-card {
-  background: #fff;
-  border: 1px solid #d9cfbf;
+  background: var(--text-white);
+  border: 1px solid var(--border-soft);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 3px 10px var(--shadow-soft);
 }
 
 /* Collection recipe image */
@@ -748,8 +771,8 @@ body.dark-mode .menu-toggle {
 .collection-remove-btn {
   margin: 0 18px 18px;
   border: none;
-  background: #d9b8a0;
-  color: #3d2b1f;
+  background: var(--bg-suggestion-hover);
+  color: var(--text-light);
   border-radius: 10px;
   padding: 10px 16px;
   font-size: 0.95rem;
@@ -775,7 +798,7 @@ body.dark-mode .menu-toggle {
   background: #f3efe2;
   border-radius: 26px;
   overflow: hidden;
-  border: 1px solid #d7cdbd;
+  border: 1px solid var(--border-soft);
 }
 
 /* Recipe image */
@@ -800,7 +823,7 @@ body.dark-mode .menu-toggle {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.3;
-  color: #16233b;
+  color: var(--text-light);
 }
 
 /* Recipe actions */
@@ -814,67 +837,8 @@ body.dark-mode .menu-toggle {
 /* Empty message */
 .empty-message {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
   padding: 20px 0;
-}
-
-/* Footer */
-.footer {
-  border-top: 1px solid #8a8a8a;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px 60px 40px;
-  background-color: #f3efe2;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer p,
-.footer h4 {
-  color: #1f1f1f;
-}
-
-.footer h4 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.footer p {
-  font-size: 1.1rem;
-}
-
-.footer-link {
-  color: #5d7c4f;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-.footer-right-group {
-  display: flex;
-  gap: 60px;
-  align-items: flex-start;
-}
-
-.footer-middle,
-.footer-right {
-  text-align: left;
-}
-
-.social-icons {
-  display: flex;
-  gap: 18px;
-  font-size: 2rem;
-}
-
-.social-icons {
-  display: flex;
-  gap: 18px;
-  font-size: 2rem;
 }
 
 /* Responsive */
