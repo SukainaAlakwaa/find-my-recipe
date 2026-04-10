@@ -26,7 +26,7 @@
 - Implemented dark mode toggle logic
 - Integrated dark mode styles across all CSS files
 - Implemented saved recipes, collections, and favorites using localStorage
-- Enabled users to view full recipe information from saved recipes, collections, and davorites
+- Enabled users to view full recipe information from saved recipes, collections, and favorites
 - Added buttons that allow users to edit saved recipes under each recipe title (trash can, heart, and add-to-collection icons)
 - Ensured compatibility and state synchronization between profile, settings, and create new pages
 - Handled default profile setup
@@ -93,13 +93,15 @@ I used ChatGPT to support me while developing parts of the JavaScript functional
 
 ### Althea Bacon
 
-ChatGPT was mainly used to support in creation of Javascript features and logic for the FindMyRecipe. It helped me understand how to debug my code and learn from my mistakes during the development process of the website.
+ChatGPT was used to support in creation of Javascript features and logic for the FindMyRecipe. It helped me understand how to debug my code and learn from my mistakes throughout the development process of the website. It guided me in choosing appropriate functions and improving the structure of my code. ChatGPT also assisted with understanding proper spacing, layout, and overall design consistency. In general, it served as a learning tool and reference, helping me write, refine, and organize my code while ensuring that all added features met the project requirements and functioned well within the website.
 
-**settings.js:** Used ChatGPT to understand how to implement different themes (light & dark mode) logic through Javascript
+**settings.js:** Used ChatGPT to understand how to implement different themes (light & dark mode) logic through Javascript and CSS.
 
-**profile.js:** Used ChatGPT how to display the api recipe information in saved recipes within collections using Javascript
+**profile.js:** Used ChatGPT how to display the API recipe information in saved recipes within collections using Javascript. It was also used to ensure that saved recipes, favorites, and collections work smoothly and show all necessary features and data.
 
 **settings.css:** Used ChatGPT to help structure and organize the code.
+
+**profile.css** Used ChatGPT to understand spacing between recipes and improve the overall layout.
 
 
 ### Julia Khanyukova
