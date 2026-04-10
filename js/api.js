@@ -1,3 +1,4 @@
+// AI-assisted: Used ChatGPT to understand async/await syntax and proper error handling with try/catch
 async function fetchRecipes(query = "chicken") {
   try {
     const response = await fetch(
@@ -16,6 +17,7 @@ async function fetchRecipes(query = "chicken") {
   }
 }
 
+// AI-assisted: Used ChatGPT to help structure the suggestions fetch and limit results with .slice()
 async function fetchRecipeSuggestions(query = "") {
   try {
     const url = query.trim()

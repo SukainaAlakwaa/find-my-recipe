@@ -33,7 +33,7 @@ function getSelectedRecipe() {
   return JSON.parse(localStorage.getItem("selectedRecipe"));
 }
 
-// Fetch api recipe
+// AI-assisted: Used ChatGPT to help with fetching individual recipe details by ID from the API
 async function fetchRecipeDetails(id) {
   try {
     const response = await fetch(
@@ -119,7 +119,7 @@ function renderAPIRecipe(recipe) {
   `;
 }
 
-// load recipe
+// AI-assisted: Used ChatGPT to help structure the rendering logic for both API and locally created recipes
 async function loadRecipeDetails() {
   const selectedRecipe = getSelectedRecipe();
 

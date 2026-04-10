@@ -14,6 +14,7 @@ const suggestionsBox = document.getElementById("suggestionsBox");
 
 let suggestionTimeout = null;
 
+// AI-assisted: Used ChatGPT to help with reading query parameters from the URL
 function getQueryFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("query") || "";
@@ -42,6 +43,7 @@ function saveRecipeToProfile(meal) {
   return false;
 }
 
+// AI-assisted: Used ChatGPT to help structure the search results rendering logic
 async function displaySearchResults(query) {
   const recipes = await fetchRecipes(query);
 

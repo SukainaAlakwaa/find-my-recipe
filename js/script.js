@@ -17,7 +17,7 @@ let currentHeroIndex = 0;
 let heroInterval = null;
 let suggestionTimeout = null;
 
-// Save recipe in the same format the profile page uses
+// AI-assisted: Used ChatGPT to help build the localStorage save logic and duplicate checking
 function saveRecipeToProfile(meal) {
   let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
 
@@ -40,7 +40,7 @@ function saveRecipeToProfile(meal) {
   return false;
 }
 
-// Load hero images from API
+// AI-assisted: Used ChatGPT to help debug the API fetch logic for loading hero images
 async function loadHeroImages(query = "chicken") {
   heroRecipes = await fetchRecipes(query);
   currentHeroIndex = 0;
@@ -131,7 +131,7 @@ function handleSearch() {
   goToSearchResults(query);
 }
 
-// Show suggestions
+// AI-assisted: Used ChatGPT to guide the logic for dynamically updating suggestions based on user input
 async function showSuggestions(query = "") {
   const suggestions = await fetchRecipeSuggestions(query);
 
