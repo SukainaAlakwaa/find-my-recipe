@@ -343,7 +343,7 @@ body.dark-mode .menu-toggle {
 .username-row h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-black);
+  color: var(--text-light);
 }
 
 .settings-btn {
