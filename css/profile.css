@@ -7,41 +7,41 @@
 
 body {
   font-family: 'Glacial Indifference', sans-serif;
-  background: #f4eedf;
-  color: #1f1f1f;
+  background: var(--bg-main);
+  color: var(--text-light);
 }
 
 /* ================= DARK MODE ================= */
-body.dark-mode {
+/* body.dark-mode {
   background: #121212;
   color: #D3D8DF;
-}
+} */
 
 /* Navbar */
-body.dark-mode .navbar,
+/* body.dark-mode .navbar,
 body.dark-mode .site-header,
 body.dark-mode header {
   background: #1F1F1F;
   color: #D3D8DF;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
+} */
 
 /* Footer */
-body.dark-mode .footer,
+/* body.dark-mode .footer,
 body.dark-mode footer {
   background: #1F1F1F;
   color: #D3D8DF;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
+} */
 
 /* Links */
-body.dark-mode .navbar a,
+/* body.dark-mode .navbar a,
 body.dark-mode .footer a {
   color: #D3D8DF;
-}
+} */
 
 /* Logo + icons */
-body.dark-mode .logo {
+/* body.dark-mode .logo {
   color: #D3D8DF;
 }
 
@@ -53,39 +53,39 @@ body.dark-mode .nav-icons a,
 body.dark-mode .menu-toggle,
 body.dark-mode .social-icons i {
   color: #D3D8DF;
-}
+} */
 
 /* PROFILE HEADER */
-body.dark-mode .profile-header {
+/* body.dark-mode .profile-header {
   background: #1F1F1F;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
+} */
 
 /* Username */
-body.dark-mode .username-row h1 {
+/* body.dark-mode .username-row h1 {
   color: #D3D8DF;
 }
 
 body.dark-mode .settings-btn {
   color: #D3D8DF;
-}
+} */
 
 /* Tabs */
-body.dark-mode .profile-tabs a {
+/* body.dark-mode .profile-tabs a {
   color: #B6BFC9;
 }
 
 body.dark-mode .profile-tabs a.active {
   border-bottom: 2px solid #D3D8DF;
-}
+} */
 
-/* Content title */
+/* Content title
 body.dark-mode .content-top h2 {
   color: #D3D8DF;
-}
+} */
 
 /* COLLECTION EDITOR */
-body.dark-mode .collection-editor {
+/* body.dark-mode .collection-editor {
   background: #1F1F1F;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -98,10 +98,10 @@ body.dark-mode .collection-editor input {
   background: #2C2C2C;
   color: #D3D8DF;
   border: 1px solid rgba(255, 255, 255, 0.15);
-}
+} */
 
 /* Popup */
-body.dark-mode .collection-popup-box {
+/* body.dark-mode .collection-popup-box {
   background: #1F1F1F;
 }
 
@@ -113,10 +113,10 @@ body.dark-mode .collection-option-btn {
 
 body.dark-mode .collection-option-btn:hover {
   background: #3A3A3A;
-}
+} */
 
 /* COLLECTION CARDS */
-body.dark-mode .collection-card {
+/* body.dark-mode .collection-card {
   background: #1F1F1F;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -127,10 +127,10 @@ body.dark-mode .collection-card h3 {
 
 body.dark-mode .collection-card p {
   color: #B6BFC9;
-}
+} */
 
 /* COLLECTION RECIPES */
-body.dark-mode .collection-recipe-item span {
+/* body.dark-mode .collection-recipe-item span {
   color: #D3D8DF;
 }
 
@@ -141,25 +141,25 @@ body.dark-mode .collection-recipe-item button {
 
 body.dark-mode .collection-recipe-item button:hover {
   background: #4A5E29;
-}
+} */
 
 /* Recipe cards */
-body.dark-mode .recipe-card {
+/* body.dark-mode .recipe-card {
   background: #1F1F1F;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 body.dark-mode .recipe-card h3 {
   color: #D3D8DF;
-}
+} */
 
 /* Empty text */
-body.dark-mode .empty-message {
+/* body.dark-mode .empty-message {
   color: #B6BFC9;
-}
+} */
 
 /* Buttons */
-body.dark-mode .create-btn,
+/* body.dark-mode .create-btn,
 body.dark-mode #saveCollectionEditBtn,
 body.dark-mode .collection-form button {
   background: #5D7434;
@@ -170,19 +170,19 @@ body.dark-mode .create-btn:hover,
 body.dark-mode #saveCollectionEditBtn:hover,
 body.dark-mode .collection-form button:hover {
   background: #4A5E29;
-}
+} */
 
 /* Icons */
-body.dark-mode .icon-btn {
+/* body.dark-mode .icon-btn {
   color: #B6BFC9;
 }
 
 body.dark-mode .icon-btn:hover {
   color: #D3D8DF;
-}
+} */
 
 /* Navigation bar */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -211,10 +211,10 @@ body.dark-mode .icon-btn:hover {
 .highlight {
   color: #8ba094;
   font-weight: 700;
-}
+} */
 
 /* Navigation icons */
-.nav-icons {
+/* .nav-icons {
   display: flex;
   gap: 24px;
 }
@@ -223,10 +223,10 @@ body.dark-mode .icon-btn:hover {
   color: #203b22;
   font-size: 2rem;
   text-decoration: none;
-}
+} */
 
 /* HAMBURGER */
-.menu-toggle {
+/* .menu-toggle {
   display: none;
   background: transparent;
   border: none;
@@ -278,7 +278,7 @@ body.dark-mode .menu-toggle {
     border-color: #4a5a4d;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
   }
-}
+} */
 
 /* Logo Link */
 /* .logo {
@@ -343,7 +343,7 @@ body.dark-mode .menu-toggle {
 .username-row h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text-black);
 }
 
 .settings-btn {
@@ -568,6 +568,7 @@ body.dark-mode .menu-toggle {
 .collection-editor input {
   width: 100%;
   padding: 18px 20px;
+  color: var(--text-light);
   border: 1.5px solid var(--border-soft);
   border-radius: 18px;
   background: var(--bg-suggestion-hover);

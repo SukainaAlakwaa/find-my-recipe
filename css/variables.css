@@ -51,7 +51,8 @@ body.dark-mode {
   --text-primary: #B6BFC9;
   --text-secondary: #aeb2b9;
   --text-light: #fff;
-  --text-white: #000;
+  /* --text-white: #000; */
+  --text-black: #fff;
   --text-hero: #203b22;
 
   --accent-main: #7f8d67;
