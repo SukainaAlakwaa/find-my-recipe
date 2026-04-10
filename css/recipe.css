@@ -77,10 +77,10 @@ body.dark-mode .recipe-details h2 {
 body.dark-mode .recipe-details p,
 body.dark-mode .recipe-details li,
 body.dark-mode .instructions {
-  color: #B6BFC9; /* softer for body text */
+  color: #B6BFC9;
 }
 
-/* Optional: image tone (slight polish) */
+/* Optional: image tone*/
 body.dark-mode .detail-image {
   filter: brightness(0.9);
 }
