@@ -25,14 +25,32 @@ function setupImageUpload() {
         const file = input.files[0];
         if (!file) return;
 
-        preview.src = URL.createObjectURL(file); // creates temporary url from selected image file, sets the preview
-        preview.style.display = "block"; // display image, previously hidden
-        label.style.display = "none"; // hides "upload image" text
-    // end of AI generated code
+        // makes sure user doesnt upload a file larger than what localStorage can handle
+        if (file.size > 2 * 1024 * 1024) {
+            alert("Image must be under 2MB");
+            input.value = ""; // reset input so user can re-upload
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const base64Image = e.target.result; // convert image to base64 string for storage
+
+            preview.src = base64Image;
+            preview.style.display = "block";
+            label.style.display = "none";
+
+            // store permanently on the element
+            preview.dataset.imageData = base64Image;
+        };
+
+        reader.readAsDataURL(file);
 
         // show edit button + enable hover state
         wrapper.classList.add("has-image");
     });
+    // end of AI generated code
 
     // allows user to edit the picture they chose
     editBtn.addEventListener("click", (e) => {
@@ -87,8 +105,8 @@ function handleCreate() {
     const title = document.querySelector(".title input").value.trim();
 
     const preview = document.getElementById("preview");
-    const image = (preview && preview.src && preview.style.display === "block")
-        ? preview.src
+    const image = (preview && preview.dataset.imageData)
+        ? preview.dataset.imageData
         : "../images/recipe-default.png";
 
     const newRecipe = {
