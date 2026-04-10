@@ -10,35 +10,81 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* GLOBAL DARK MODE */
-/* Base */
+/* ================= DARK MODE ================= */
 body.dark-mode {
-  background: #1f2521;
-  color: #f5f1e8;
+  background: #121212;
+  color: #D3D8DF;
 }
 
-/* Navbar / Header */
+/* Navbar */
 body.dark-mode .navbar,
 body.dark-mode .site-header,
 body.dark-mode header {
-  background: #2b2b2b;
-  color: #f5f5f5;
+  background: #1F1F1F;
+  color: #D3D8DF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Footer */
 body.dark-mode .footer,
 body.dark-mode footer {
-  background: #222;
-  color: #f5f5f5;
+  background: #1F1F1F;
+  color: #D3D8DF;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Links (nav + footer) */
+/* Links */
 body.dark-mode .navbar a,
-body.dark-mode .footer a,
-body.dark-mode header a,
-body.dark-mode footer a {
-  color: #f5f5f5;
+body.dark-mode .footer a {
+  color: #D3D8DF;
 }
+
+/* Logo + icons */
+body.dark-mode .logo {
+  color: #D3D8DF;
+}
+
+body.dark-mode .highlight {
+  color: #AFC48A;
+}
+
+/* Page wrapper */
+body.dark-mode .recipe-details-page {
+  color: #D3D8DF;
+}
+
+/* Back link */
+body.dark-mode .back-link {
+  color: #AFC48A;
+}
+
+/* Recipe card */
+body.dark-mode .recipe-details {
+  background-color: #1F1F1F;
+  color: #D3D8DF;
+}
+
+/* Headings */
+body.dark-mode .recipe-details h1 {
+  color: #D3D8DF;
+}
+
+body.dark-mode .recipe-details h2 {
+  color: #D3D8DF;
+}
+
+/* Text */
+body.dark-mode .recipe-details p,
+body.dark-mode .recipe-details li,
+body.dark-mode .instructions {
+  color: #B6BFC9; /* softer for body text */
+}
+
+/* Optional: image tone (slight polish) */
+body.dark-mode .detail-image {
+  filter: brightness(0.9);
+}
+
 
 h1, h2 {
   font-family: 'Glacial Indifference', sans-serif;

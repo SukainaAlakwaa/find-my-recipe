@@ -11,34 +11,174 @@ body {
   color: #1f1f1f;
 }
 
-/* GLOBAL DARK MODE */
-/* Base */
+/* ================= DARK MODE ================= */
 body.dark-mode {
-  background: #1f2521;
-  color: #f5f1e8;
+  background: #121212;
+  color: #D3D8DF;
 }
 
-/* Navbar / Header */
+/* Navbar */
 body.dark-mode .navbar,
 body.dark-mode .site-header,
 body.dark-mode header {
-  background: #2b2b2b;
-  color: #f5f5f5;
+  background: #1F1F1F;
+  color: #D3D8DF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Footer */
 body.dark-mode .footer,
 body.dark-mode footer {
-  background: #222;
-  color: #f5f5f5;
+  background: #1F1F1F;
+  color: #D3D8DF;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Links (nav + footer) */
+/* Links */
 body.dark-mode .navbar a,
-body.dark-mode .footer a,
-body.dark-mode header a,
-body.dark-mode footer a {
-  color: #f5f5f5;
+body.dark-mode .footer a {
+  color: #D3D8DF;
+}
+
+/* Logo + icons */
+body.dark-mode .logo {
+  color: #D3D8DF;
+}
+
+body.dark-mode .highlight {
+  color: #AFC48A;
+}
+
+body.dark-mode .nav-icons a,
+body.dark-mode .menu-toggle,
+body.dark-mode .social-icons i {
+  color: #D3D8DF;
+}
+
+/* PROFILE HEADER */
+body.dark-mode .profile-header {
+  background: #1F1F1F;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Username */
+body.dark-mode .username-row h1 {
+  color: #D3D8DF;
+}
+
+body.dark-mode .settings-btn {
+  color: #D3D8DF;
+}
+
+/* Tabs */
+body.dark-mode .profile-tabs a {
+  color: #B6BFC9;
+}
+
+body.dark-mode .profile-tabs a.active {
+  border-bottom: 2px solid #D3D8DF;
+}
+
+/* Content title */
+body.dark-mode .content-top h2 {
+  color: #D3D8DF;
+}
+
+/* COLLECTION EDITOR */
+body.dark-mode .collection-editor {
+  background: #1F1F1F;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .collection-editor h3 {
+  color: #D3D8DF;
+}
+
+body.dark-mode .collection-editor input {
+  background: #2C2C2C;
+  color: #D3D8DF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Popup */
+body.dark-mode .collection-popup-box {
+  background: #1F1F1F;
+}
+
+body.dark-mode .collection-option-btn {
+  background: #2C2C2C;
+  color: #D3D8DF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .collection-option-btn:hover {
+  background: #3A3A3A;
+}
+
+/* COLLECTION CARDS */
+body.dark-mode .collection-card {
+  background: #1F1F1F;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .collection-card h3 {
+  color: #D3D8DF;
+}
+
+body.dark-mode .collection-card p {
+  color: #B6BFC9;
+}
+
+/* COLLECTION RECIPES */
+body.dark-mode .collection-recipe-item span {
+  color: #D3D8DF;
+}
+
+body.dark-mode .collection-recipe-item button {
+  background: #5D7434;
+  color: #D3D8DF;
+}
+
+body.dark-mode .collection-recipe-item button:hover {
+  background: #4A5E29;
+}
+
+/* Recipe cards */
+body.dark-mode .recipe-card {
+  background: #1F1F1F;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .recipe-card h3 {
+  color: #D3D8DF;
+}
+
+/* Empty text */
+body.dark-mode .empty-message {
+  color: #B6BFC9;
+}
+
+/* Buttons */
+body.dark-mode .create-btn,
+body.dark-mode #saveCollectionEditBtn,
+body.dark-mode .collection-form button {
+  background: #5D7434;
+  color: #D3D8DF;
+}
+
+body.dark-mode .create-btn:hover,
+body.dark-mode #saveCollectionEditBtn:hover,
+body.dark-mode .collection-form button:hover {
+  background: #4A5E29;
+}
+
+/* Icons */
+body.dark-mode .icon-btn {
+  color: #B6BFC9;
+}
+
+body.dark-mode .icon-btn:hover {
+  color: #D3D8DF;
 }
 
 /* Navigation bar */
