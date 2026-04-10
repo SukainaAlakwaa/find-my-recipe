@@ -310,7 +310,7 @@ body.dark-mode .menu-toggle {
   padding: 24px 40px;
   border-bottom: 1.5px solid #4b4b4b;
   gap: 28px;
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
