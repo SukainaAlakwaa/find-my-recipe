@@ -13,7 +13,7 @@
 - Implemented the responsive hamburger menu for mobile
 - Wrote the Visual Direction and Site Organization sections of the project document
 
-**Althea Bacon**
+**Althea Bacon — 101391470**
 - Provided the website idea and name
 - Helped in creation of the mockup design
 - Created presentation slides
