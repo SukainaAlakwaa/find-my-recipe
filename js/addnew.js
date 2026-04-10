@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupImageUpload();
     setupIngredientsList();
     setupCreateButton();
+    setupValidation();
 });
 
 
@@ -91,8 +92,18 @@ function handleCreate() {
         : "../images/recipe-default.png";
 
     if (!title) {
-        alert("Please add a title!");
+    alert("Please add a title!");
+    return;
+    }
+
+    if (title.length > 50) {
+        alert("Title must be under 50 characters!");
         return;
+    }
+
+    if (category.length > 20 || area.length > 20) {
+    alert("Category and Area must be under 20 characters!");
+    return;
     }
 
     const newRecipe = {
@@ -166,4 +177,27 @@ function loadProfile() {
 function applyTheme() {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.body.classList.toggle("dark-mode", savedTheme === "dark");
+}
+
+// FORM VALIDATION
+function setupValidation() {
+    const title = document.querySelector(".title .placeholder");
+    const smallFields = document.querySelectorAll(".small .placeholder");
+
+    if (title) {
+        limitText(title, 50);
+    }
+
+    smallFields.forEach(field => {
+        limitText(field, 20);
+    });
+}
+
+// reusable max length function for contenteditable elements, used in title and small fields (category/area)
+function limitText(element, maxLength) {
+    element.addEventListener("input", () => {
+        if (element.innerText.length > maxLength) {
+            element.innerText = element.innerText.substring(0, maxLength);
+        }
+    });
 }

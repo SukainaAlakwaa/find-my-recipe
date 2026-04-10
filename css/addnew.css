@@ -396,6 +396,8 @@ body.dark-mode .nav-icons a {
 .ingredients-list {
     padding-left: 20px;
     margin: 0;
+    max-height: 180px;
+    overflow-y: auto;
 }
 
 .ingredients-list li {
@@ -404,7 +406,8 @@ body.dark-mode .nav-icons a {
 
 .directions {
     grid-column: span 2;
-    height: 250px;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .description {
